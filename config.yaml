@@ -1,0 +1,60 @@
+# ============================================================
+# 实验配置 — 模型清单与生成参数（经审查修订版 2026-07-20）
+# 修订说明：
+#   1. max_tokens 512→2048：512会截断CoT+SL组合方法的输出，系统性偏袒
+#      简单提示方法，属于效度威胁。max_tokens是上限不是实际消耗，调高
+#      不增加正常输出的成本（仅推理模型R1会实际用到较多输出Token）。
+# ============================================================
+
+generation:
+  temperature: 0        # 贪婪解码，保证可复现（论文 3.3 节）
+  max_tokens: 2048      # 见修订说明1；勿低于1024
+
+rate_limit_sleep: 1.0   # 每次调用后休眠秒数；限流报错时调大
+
+models:
+  # 1. 豆包（火山引擎）底层模型 doubao-seed-2-0-mini
+  #    Ark平台用endpoint ID调用是正确的；论文中报告底层模型名，不要写ep编号
+  doubao-seed-2-0-mini:
+    provider: openai_compatible
+    base_url: https://ark.cn-beijing.volces.com/api/v3
+    model: ep-20260720015939-4spp5
+    api_key_env: ARK_API_KEY
+    price_in_per_m: 0.028   # 0.2元/百万Token（按汇率≈7.1折算，下同）
+    price_out_per_m: 0.28   # 2元/百万Token
+
+  # 2. 百度文心 ernie-4.5-turbo-32k
+  ernie-4.5-turbo-32k:
+    provider: openai_compatible
+    base_url: https://qianfan.baidubce.com/v2
+    model: ernie-4.5-turbo-32k
+    api_key_env: QIANFAN_API_KEY
+    price_in_per_m: 0.11    # 0.8元/百万Token
+    price_out_per_m: 0.45   # 3.2元/百万Token
+
+  # 3. 智谱 glm-4.7-flashX
+  glm-4.7-flashX:
+    provider: openai_compatible
+    base_url: https://open.bigmodel.cn/api/paas/v4
+    model: glm-4.7-flashX
+    api_key_env: ZHIPU_API_KEY
+    price_in_per_m: 0.07    # 0.5元/百万Token
+    price_out_per_m: 0.375   # 3元/百万Token
+
+  # 4. 通义千问 qwen3.7-plus 
+  qwen3.7-plus:
+    provider: openai_compatible
+    base_url: https://dashscope.aliyuncs.com/compatible-mode/v1
+    model: qwen3.7-plus     
+    api_key_env: DASHSCOPE_API_KEY
+    price_in_per_m: 0.22    # 1.6元/百万Token（待随模型ID一并核对）
+    price_out_per_m: 0.91   # 6.4元/百万Token
+
+  # 5. 本地部署模型（Ollama）qwen2.5-coder:7b
+  qwen2.5-coder:7b:
+    provider: openai_compatible
+    base_url: http://localhost:11434/v1
+    model: qwen2.5-coder:7b
+    api_key_env: NO_NEED    # 本地模型不需要密钥（代码已兼容）
+    price_in_per_m: 0
+    price_out_per_m: 0
