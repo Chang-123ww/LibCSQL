@@ -7,10 +7,14 @@
 # ============================================================
 
 generation:
-  temperature: 0        # 贪婪解码，保证可复现（论文 3.3 节）
+  temperature: 0        # 贪婪解码，减少输出变异（论文 3.3 节）
   max_tokens: 2048      # 见修订说明1；勿低于1024
 
 rate_limit_sleep: 1.0   # 每次调用后休眠秒数；限流报错时调大
+
+pricing:
+  currency: CNY          # 单价币种：人民币元 / 百万 Token
+  checked_on: "2026-07-20"   # 价格核对日期（各平台官方价格页）
 
 models:
   # 1. 豆包（火山引擎）底层模型 doubao-seed-2-0-mini
@@ -20,8 +24,8 @@ models:
     base_url: https://ark.cn-beijing.volces.com/api/v3
     model: ep-20260720015939-4spp5
     api_key_env: ARK_API_KEY
-    price_in_per_m: 0.028   # 0.2元/百万Token（按汇率≈7.1折算，下同）
-    price_out_per_m: 0.28   # 2元/百万Token
+    price_in_per_m: 0.2
+    price_out_per_m: 2.0
 
   # 2. 百度文心 ernie-4.5-turbo-32k
   ernie-4.5-turbo-32k:
@@ -29,8 +33,8 @@ models:
     base_url: https://qianfan.baidubce.com/v2
     model: ernie-4.5-turbo-32k
     api_key_env: QIANFAN_API_KEY
-    price_in_per_m: 0.11    # 0.8元/百万Token
-    price_out_per_m: 0.45   # 3.2元/百万Token
+    price_in_per_m: 0.8
+    price_out_per_m: 3.2
 
   # 3. 智谱 glm-4.7-flashX
   glm-4.7-flashX:
@@ -38,8 +42,8 @@ models:
     base_url: https://open.bigmodel.cn/api/paas/v4
     model: glm-4.7-flashX
     api_key_env: ZHIPU_API_KEY
-    price_in_per_m: 0.07    # 0.5元/百万Token
-    price_out_per_m: 0.375   # 3元/百万Token
+    price_in_per_m: 0.5
+    price_out_per_m: 3.0
 
   # 4. 通义千问 qwen3.7-plus 
   qwen3.7-plus:
@@ -47,8 +51,8 @@ models:
     base_url: https://dashscope.aliyuncs.com/compatible-mode/v1
     model: qwen3.7-plus     
     api_key_env: DASHSCOPE_API_KEY
-    price_in_per_m: 0.22    # 1.6元/百万Token（待随模型ID一并核对）
-    price_out_per_m: 0.91   # 6.4元/百万Token
+    price_in_per_m: 1.6
+    price_out_per_m: 6.4
 
   # 5. 本地部署模型（Ollama）qwen2.5-coder:7b
   qwen2.5-coder:7b:
