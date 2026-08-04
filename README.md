@@ -199,7 +199,11 @@ qwen2.5-coder:7b 的 CoT 条件。论文第 4 章的全部准确率数字均以�
 如使用本测试集或代码，请引用：
 
 > He, X. (2026). LibCSQL: A NL2SQL test set and experimental framework for
-> academic library circulation scenarios. GitHub. https://github.com/Chang-123ww/LibCSQL
+> academic library circulation scenarios (Version 1.0.2) [Data set and software].
+> Zenodo. https://doi.org/10.5281/zenodo.21787853
+
+对应的 GitHub 仓库为 https://github.com/Chang-123ww/LibCSQL 。论文中引用的即上述
+Zenodo 版本，与本仓库 v1.0.2 标签一致。
 
 ## 许可
 
