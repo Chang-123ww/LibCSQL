@@ -96,15 +96,16 @@ python -m src.runner --models qwen2.5-coder:7b --limit 5
 # 5. 正式实验（5模型 × 5方法 × 200用例 = 5000次查询；可断点续跑）
 python -m src.runner
 
-# 6. JSON残渣修复重评测 → results/revalidated.csv
+# 6. JSON残渣清理与重评测 → results/revalidated.csv
 python reevaluate.py
 
+# 6b. 清理规则前后对照 → results/sensitivity_cleaning.csv 与论文表 4.1
 python analysis/sensitivity_cleaning.py
 
-# 7. 失败案例分类 → results/error_classification.csv 与论文表 4.4
+# 7. 失败案例分类 → results/error_classification.csv 与论文表 4.5
 python error_taxonomy.py
 
-# 8. 描述统计与热力图（论文表 4.1、4.2、4.3 与图 4.1）
+# 8. 描述统计与热力图（论文表 4.2、4.3、4.4 与图 4.1）
 python analysis/descriptive_analysis.py
 
 # 9. 启动原型界面
@@ -154,7 +155,7 @@ qwen2.5-coder:7b 的 CoT 条件。论文第 4 章的全部准确率数字均以�
 
 ## 关于 error_taxonomy.py
 
-论文 4.3 节的失败分类由该脚本按**确定性规则**生成，不含任何人工编码，因此表 4.4
+论文 4.3 节的失败分类由该脚本按**确定性规则**生成，不含任何人工编码，因此表 4.5
 的每一格都可由本仓库文件重现。判定按以下顺序进行，每条查询只归入一类：
 
 1. `correct` —— 校正后判定 EX = 1
