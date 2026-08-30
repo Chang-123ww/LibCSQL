@@ -33,6 +33,7 @@ LibCSQL/
 ├── src/                       原型系统六层管线
 │   ├── db_setup.py            建库 + 确定性模拟数据（固定随机种子，可复现）
 │   ├── prompts.py             五种提示方法的模板与 few-shot 示例（论文附录 C 逐字收录）
+│   ├── runner.py              批量实验调度（断点续跑，产出 results/raw/*.jsonl）
 │   └── glossary.py            图书馆术语标准化词典（15 条，论文附录 C.1.2）
 ├── data/
 │   └── test_cases.json        200条标注测试集（每难度50条）
@@ -46,8 +47,7 @@ LibCSQL/
     ├── raw/*.jsonl            5000 条原始查询记录（每次调用一行）
     ├── revalidated.csv        reevaluate.py 校正后的判定（论文全部准确率数字的来源）
     ├── sensitivity_cleaning.csv  sensitivity_cleaning.py 输出，即论文表 4.1
-    └── error_classification.csv  error_taxonomy.py 输出，每条查询一行及其错误类别
-```
+    └── error_classification.csv  error_taxonomy.py 输出，每条查询一行及其错误类别```
 ## 测试集说明
 
 `data/test_cases.json` 共 200 条，每条含四个字段：
@@ -145,7 +145,7 @@ Zero-shot、Few-shot、Chain-of-Thought (CoT)、Schema-Linking (SL)、CoT + Sche
 部分模型（尤其本地 qwen2.5-coder:7b）输出的 JSON 中，SQL 字段末尾偶有残留收尾
 字符（如 `"}`），导致 SQLite 报语法错误、被误判为 EX=0。`reevaluate.py` 在
 不改动模型原始输出的前提下清理这些残渣后重新执行判定。清理规则对全部 5,000 条记录一律适用，
-不区分原判是 0 还是 1，因此两个方向的变动条数都可核查（见论文 Table 4.1 与 analysis/sensitivity_cleaning.py）。
+不区分原判是 0 还是 1，因此两个方向的变动条数都可核查（见论文 表 4.1 与 analysis/sensitivity_cleaning.py）。
 
 在本次实验数据上，清理规则对全部 5,000 条记录一律施加，其中 32 条由 0 变 1、0 条由 1 变 0，
 总体 EX 由 0.690 升至 0.696。双向施加是必要的：只有这样，“无一条反向变化”才是可检验的实证结果，
@@ -165,7 +165,7 @@ qwen2.5-coder:7b 的 CoT 条件。论文第 4 章的全部准确率数字均以�
 5. `schema_reference_error` —— 执行报错含 `no such column` / `no such table`
 6. `other_execution_error` —— 其余执行失败
 7. `result_mismatch` —— SQL 可执行，但结果集与标注 SQL 不一致
-
+本次实验中 `api_error` 为 0 条，`correct` 为 3,482 条，其余五类合计 1,518 条，即论文表 4.5 的五行。
 ## 关于统计口径
 
 同一批 200 条测试用例在全部 25 个"模型 × 方法"条件下各运行一次，因此 5000 条记录
@@ -188,7 +188,7 @@ qwen2.5-coder:7b 的 CoT 条件。论文第 4 章的全部准确率数字均以�
 
 ## 已知说明
 
-- `results/raw/*.jsonl` 中的 `ex` 字段为**校正前**判定，`error_type` 字段未使用（恒为空）。
+- `results/raw/*.jsonl` 中的 `ex` 字段为"校正前"判定，`error_type` 字段未使用（恒为空）。
   论文第 4 章的全部 EX 数字以 `results/revalidated.csv` 为准；失败分类以
   `results/error_classification.csv` 为准。分析脚本已强制读取前者，缺失时会报错退出。
 
@@ -209,8 +209,10 @@ qwen2.5-coder:7b 的 CoT 条件。论文第 4 章的全部准确率数字均以�
 > academic library circulation scenarios (Version 1.0.2) [Data set and software].
 > Zenodo. https://doi.org/10.5281/zenodo.21787853
 
-对应的 GitHub 仓库为 https://github.com/Chang-123ww/LibCSQL 。论文中引用的即上述
-Zenodo 版本，与本仓库 v1.0.2 标签一致。
+对应的 GitHub 仓库为 https://github.com/Chang-123ww/LibCSQL 。论文引用的是上述
+Zenodo 归档版本（对应 v1.0.2 标签）。归档之后本仓库 main 分支有若干修订：将清理规则
+改为对全部记录双向施加、新增 `analysis/sensitivity_cleaning.py`、并同步更新本说明；
+论文报告的全部数字不受这些修订影响（`results/revalidated.csv` 内容逐行未变）。
 
 ## 许可
 

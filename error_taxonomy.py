@@ -14,7 +14,7 @@ Inputs
 
 Outputs
     results/error_classification.csv   one row per query with its category
-    stdout                             the contingency table used in Table 4.4
+    stdout                             the contingency table used in Table 4.5
 
 Classification rule, applied in this order:
     1. correct                  corrected verdict ex == 1
