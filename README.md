@@ -27,24 +27,27 @@ LibCSQL/
 ├── config.yaml                模型清单、生成参数、价格（开跑前核对模型ID与价格）
 ├── .env.example               API密钥模板（复制为 .env 后填写；.env 不会上传）
 ├── app.py                     Streamlit 原型界面（论文 4.1 节的原型系统）
-├── reevaluate.py              JSON残渣修复重评测（论文 4.2.1 节）
-├── error_taxonomy.py          失败查询的确定性分类（论文 4.3 节、表 4.4）
+├── reevaluate.py              JSON残渣清理与重评测（清理规则见论文 3.3.7 节，结果见 4.2.1 节）
+├── error_taxonomy.py          失败查询的确定性分类（论文 4.3 节、表 4.5）
 ├── requirements.txt           依赖清单
 ├── src/                       原型系统六层管线
-│   └── db_setup.py            建库 + 确定性模拟数据（固定随机种子，可复现）
+│   ├── db_setup.py            建库 + 确定性模拟数据（固定随机种子，可复现）
+│   ├── prompts.py             五种提示方法的模板与 few-shot 示例（论文附录 C 逐字收录）
+│   └── glossary.py            图书馆术语标准化词典（15 条，论文附录 C.1.2）
 ├── data/
 │   └── test_cases.json        200条标注测试集（每难度50条）
 ├── scripts/
 │   ├── validate_test_cases.py 测试集校验（逐条执行标注SQL）
 │   └── quick_stats.py         快速统计（EX/LF/Token 分模型分难度）
 ├── analysis/
-│   └── descriptive_analysis.py  描述统计与热力图（论文表 4.1–4.3、图 4.1）
+│   ├── descriptive_analysis.py   描述统计与热力图（论文表 4.2–4.4、图 4.1）
+│   └── sensitivity_cleaning.py   清理规则前后对照（论文表 4.1）
 └── results/
     ├── raw/*.jsonl            5000 条原始查询记录（每次调用一行）
     ├── revalidated.csv        reevaluate.py 校正后的判定（论文全部准确率数字的来源）
+    ├── sensitivity_cleaning.csv  sensitivity_cleaning.py 输出，即论文表 4.1
     └── error_classification.csv  error_taxonomy.py 输出，每条查询一行及其错误类别
 ```
-
 ## 测试集说明
 
 `data/test_cases.json` 共 200 条，每条含四个字段：
@@ -95,6 +98,8 @@ python -m src.runner
 
 # 6. JSON残渣修复重评测 → results/revalidated.csv
 python reevaluate.py
+
+python analysis/sensitivity_cleaning.py
 
 # 7. 失败案例分类 → results/error_classification.csv 与论文表 4.4
 python error_taxonomy.py

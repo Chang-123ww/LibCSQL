@@ -8,9 +8,9 @@ descriptive_analysis.py — 实验结果描述性分析（对应论文 3.4.3 与
 
 输出（results/ 目录）:
   summary_by_combo.csv        25 组合的 EX/LF/延迟/Token 均值与标准差 + 成本估算
-  ex_matrix.csv               模型 × 方法 EX 矩阵（论文 Table 4.1）
-  subgroup_by_difficulty.csv  难度 × 方法 EX 矩阵（论文 Table 4.2）
-  cost_by_model.csv           分模型准确率/延迟/Token/成本（论文 Table 4.3）
+  ex_matrix.csv               模型 × 方法 EX 矩阵（论文 Table 4.2）
+  subgroup_by_difficulty.csv  难度 × 方法 EX 矩阵（论文 Table 4.3）
+  cost_by_model.csv           分模型准确率/延迟/Token/成本（论文 Table 4.4）
   heatmap_ex.png              模型 × 方法 EX 热力图（论文 Figure 4.1）
 
 统计口径说明（与论文 3.4.3、4.2.3、5.3.7 一致）:
