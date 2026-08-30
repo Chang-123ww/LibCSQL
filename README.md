@@ -17,8 +17,8 @@ for NL2SQL in Academic Library Scenarios: A Design Science Research Approach》�
 
 BibSQL (Wang et al., 2025) 面向图书馆**书目检索**（两张表、单跳/双跳元数据查询）；
 本测试集面向**流通业务数据**——六张表通过外键关联（图书、读者、借阅记录、图书分类、
-出版社、馆藏地），支持从单表查询到多表连接、嵌套子查询的各类操作，可回答"各学院
-借阅量排名""借阅量超过学院均值的读者"等 BibSQL 结构上无法覆盖的统计查询。
+出版社、馆藏地），支持从单表查询到多表连接、嵌套子查询的各类操作，可回答“各学院
+借阅量排名”“借阅量超过学院均值的读者”等 BibSQL 结构上无法覆盖的统计查询。
 
 ## 项目结构
 
@@ -47,7 +47,9 @@ LibCSQL/
     ├── raw/*.jsonl            5000 条原始查询记录（每次调用一行）
     ├── revalidated.csv        reevaluate.py 校正后的判定（论文全部准确率数字的来源）
     ├── sensitivity_cleaning.csv  sensitivity_cleaning.py 输出，即论文表 4.1
-    └── error_classification.csv  error_taxonomy.py 输出，每条查询一行及其错误类别```
+    └── error_classification.csv  error_taxonomy.py 输出，每条查询一行及其错误类别
+```
+
 ## 测试集说明
 
 `data/test_cases.json` 共 200 条，每条含四个字段：
@@ -145,7 +147,7 @@ Zero-shot、Few-shot、Chain-of-Thought (CoT)、Schema-Linking (SL)、CoT + Sche
 部分模型（尤其本地 qwen2.5-coder:7b）输出的 JSON 中，SQL 字段末尾偶有残留收尾
 字符（如 `"}`），导致 SQLite 报语法错误、被误判为 EX=0。`reevaluate.py` 在
 不改动模型原始输出的前提下清理这些残渣后重新执行判定。清理规则对全部 5,000 条记录一律适用，
-不区分原判是 0 还是 1，因此两个方向的变动条数都可核查（见论文 表 4.1 与 analysis/sensitivity_cleaning.py）。
+不区分原判是 0 还是 1，因此两个方向的变动条数都可核查（见论文表 4.1 与 analysis/sensitivity_cleaning.py）。
 
 在本次实验数据上，清理规则对全部 5,000 条记录一律施加，其中 32 条由 0 变 1、0 条由 1 变 0，
 总体 EX 由 0.690 升至 0.696。双向施加是必要的：只有这样，“无一条反向变化”才是可检验的实证结果，
@@ -165,10 +167,12 @@ qwen2.5-coder:7b 的 CoT 条件。论文第 4 章的全部准确率数字均以�
 5. `schema_reference_error` —— 执行报错含 `no such column` / `no such table`
 6. `other_execution_error` —— 其余执行失败
 7. `result_mismatch` —— SQL 可执行，但结果集与标注 SQL 不一致
+
 本次实验中 `api_error` 为 0 条，`correct` 为 3,482 条，其余五类合计 1,518 条，即论文表 4.5 的五行。
+
 ## 关于统计口径
 
-同一批 200 条测试用例在全部 25 个"模型 × 方法"条件下各运行一次，因此 5000 条记录
+同一批 200 条测试用例在全部 25 个“模型 × 方法”条件下各运行一次，因此 5000 条记录
 是同一组题目的重复测量，而非 25 组独立样本，且每格无重复试验。对其做方差分析会把
 记录当作相互独立、低估残差，得到的 p 值不可解释。**论文因此以描述性方式报告模型与
 方法的比较**——单元格均值、边际均值、各因素的极差、以及排序在不同条件下的稳定性。
@@ -182,15 +186,15 @@ qwen2.5-coder:7b 的 CoT 条件。论文第 4 章的全部准确率数字均以�
 ## 指标口径
 
 - **EX（执行准确率，主指标）**：预测 SQL 与标注 SQL 在测试库上执行结果集一致。
-  标注 SQL 含顶层 ORDER BY 时按有序比较，否则按无序比较；浮点四舍五入到 1e-6。
+标注 SQL 含顶层 ORDER BY 时按有序比较，否则按无序比较；浮点四舍五入到 1e-6。
 - **LF（逻辑形式准确率）**：规范化后字符串匹配，为语义等价的保守下界，辅助指标。
-  以 EX 为准，与 Spider 等基准通行做法一致。
+框架会计算并记录 LF，但论文只报告 EX（见论文 3.4.2 节），与 Spider 等基准通行做法一致。
 
 ## 已知说明
 
-- `results/raw/*.jsonl` 中的 `ex` 字段为"校正前"判定，`error_type` 字段未使用（恒为空）。
-  论文第 4 章的全部 EX 数字以 `results/revalidated.csv` 为准；失败分类以
-  `results/error_classification.csv` 为准。分析脚本已强制读取前者，缺失时会报错退出。
+- `results/raw/*.jsonl` 中的 `ex` 字段为“校正前”判定，`error_type` 字段未使用（恒为空）。
+论文第 4 章的全部 EX 数字以 `results/revalidated.csv` 为准；失败分类以
+`results/error_classification.csv` 为准。分析脚本已强制读取前者，缺失时会报错退出。
 
 ## 数据伦理
 
@@ -219,7 +223,7 @@ Zenodo 归档版本（对应 v1.0.2 标签）。归档之后本仓库 main 分�
 本仓库采用双许可：
 
 - **测试集与数据**（`data/`）采用 [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
-  （知识共享署名 4.0）：可自由使用与再分发，但须署名引用本研究。
+（知识共享署名 4.0）：可自由使用与再分发，但须署名引用本研究。
 - **代码**（`src/`、`scripts/`、`analysis/` 及根目录脚本）采用
-  [MIT License](https://opensource.org/licenses/MIT)：可自由使用、修改与分发，
-  保留版权与许可声明即可。
+[MIT License](https://opensource.org/licenses/MIT)：可自由使用、修改与分发，
+保留版权与许可声明即可。

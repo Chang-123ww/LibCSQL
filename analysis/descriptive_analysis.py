@@ -129,7 +129,7 @@ def main():
     summ = summary_table(df)
     summ.to_csv(os.path.join(OUT, "summary_by_combo.csv"), index=False, encoding="utf-8-sig")
 
-    # ---- 2. EX 矩阵（Table 4.1）----
+    # ---- 2. EX 矩阵（Table 4.2）----
     piv = df.pivot_table(index="model", columns="method", values="ex", aggfunc="mean")
     piv = piv.loc[ordered(piv.index, MODEL_ORDER), ordered(piv.columns, METHOD_ORDER)]
     piv["Model Mean"] = piv.mean(axis=1)
@@ -149,14 +149,14 @@ def main():
     top = cell.idxmax(axis=0).value_counts()
     print(f"各方法下 EX 最高的模型: {top.to_dict()}")
 
-    # ---- 4. 分难度亚组（Table 4.2）----
+    # ---- 4. 分难度亚组（Table 4.3）----
     sub = df.pivot_table(index="difficulty", columns="method", values="ex", aggfunc="mean")
     sub = sub.loc[ordered(sub.index, DIFFICULTY_ORDER), ordered(sub.columns, METHOD_ORDER)]
     sub.round(3).to_csv(os.path.join(OUT, "subgroup_by_difficulty.csv"), encoding="utf-8-sig")
     print("\n== Table 4.3  EX by Query Difficulty × Prompt Method ==")
     print(sub.round(3).to_string())
 
-    # ---- 5. 分模型成本（Table 4.3）----
+    # ---- 5. 分模型成本（Table 4.4）----
     cost = df.groupby("model").agg(
         ex=("ex", "mean"), latency=("latency", "mean"),
         tokens_in=("input_tokens", "mean"), tokens_out=("output_tokens", "mean"),
