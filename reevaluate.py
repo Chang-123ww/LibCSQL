@@ -2,10 +2,16 @@
 """
 reevaluate.py — 对 results/raw/*.jsonl 重新判定 EX（修复 JSON 残渣解析问题）
 
-背景：部分模型（尤其本地 qwen2.5-coder）输出的 JSON 中，SQL 字段末尾会残留
+背景：部分模型（尤其本地 qwen2.5-coder:7b）输出的 JSON 中，SQL 字段末尾会残留
 `"}` 等收尾字符，导致执行时报 "unrecognized token" 语法错误、被误判为 EX=0。
-本脚本在【不改动模型原始输出】的前提下，清理这些残渣后重新执行判定，
-恢复被误判的正确案例。原判 EX=1 的记录一律保持不变，只对原判 EX=0 的尝试恢复。
+本脚本在【不改动模型原始输出】的前提下，清理这些残渣后重新执行判定。
+
+清理规则（与论文 §3.3.7 一致，确定性、只作用于字符串末尾）：
+    依次剥去结尾的 `"}`、`}`、`"`、`;`；不改动语句内部，不新增任何 token。
+
+【重要】该规则对全部 5,000 条记录一律适用，不区分原判是 0 还是 1。
+只有双向施加，"有多少条由 0 变 1、有多少条由 1 变 0"才是可检验的实证结果，
+而不是流程本身保证的结论。脚本同时报告两个方向的条数（论文 §4.2.1 报告 32 / 0）。
 
 用法：
   # 先重建测试库（与实验时同一确定性种子，保证一致）
@@ -18,8 +24,9 @@ reevaluate.py — 对 results/raw/*.jsonl 重新判定 EX（修复 JSON 残渣�
   python reevaluate.py
 
 输出：
-  控制台打印 修复前/后 EX 对比、模型×方法矩阵
+  控制台打印 清理前/后 EX 对比、双向变动条数、模型×方法矩阵
   --out 指定时写出逐条重评测结果 csv（默认 results/revalidated.csv）
+  列 ex_orig = 原始运行时的判定；ex = 施加清理规则后的判定（论文所用）
 """
 import argparse
 import glob
@@ -75,6 +82,24 @@ def has_top_order_by(sql):
     return re.search(r'\border\s+by\b', ''.join(out), re.IGNORECASE) is not None
 
 
+def judge(db, gold_sql, gold_rows, pred_sql):
+    """安全校验 + 执行 + 结果集比对，返回 0/1。规则与实验时一致。"""
+    s = (pred_sql or "").strip()
+    if not s:
+        return 0
+    if not re.match(r"^(select|with)\b", s, re.IGNORECASE) or BLOCKED.search(s):
+        return 0
+    if gold_rows is None:
+        return 0
+    prows, perr = run_sql(db, s)
+    if perr is not None or prows is None:
+        return 0
+    p = norm_rows(prows)
+    if has_top_order_by(gold_sql):
+        return 1 if gold_rows == p else 0
+    return 1 if sorted(map(repr, gold_rows)) == sorted(map(repr, p)) else 0
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--db", default=DB_DEFAULT)
@@ -95,7 +120,7 @@ def main():
     goldres = {}
     for cid, gs in gold.items():
         r, e = run_sql(args.db, gs)
-        goldres[cid] = (norm_rows(r) if r is not None else None, e)
+        goldres[cid] = norm_rows(r) if r is not None else None
 
     files = sorted(glob.glob(os.path.join(args.raw, "*.jsonl")))
     if args.model:
@@ -105,29 +130,19 @@ def main():
             raise SystemExit(f"未找到模型 {args.model} 的文件（在 {args.raw} 下）")
 
     records = []
-    n_recovered = 0
+    n_up = n_down = 0        # 0→1 与 1→0，双向统计
     for f in files:
         for line in open(f, encoding="utf-8"):
             r = json.loads(line)
             cid = r["case_id"]
             ex_orig = r.get("ex", 0)
-            ex = ex_orig
-            # 仅对原判0、且清理后是合法只读SELECT的记录尝试恢复
-            if ex_orig == 0:
-                s = clean_sql(r.get("pred_sql", "") or "")
-                if s and re.match(r"^(select|with)\b", s, re.IGNORECASE) and not BLOCKED.search(s):
-                    g = goldres.get(cid)
-                    if g and g[0] is not None:
-                        prows, perr = run_sql(args.db, s)
-                        if perr is None and prows is not None:
-                            p = norm_rows(prows)
-                            if has_top_order_by(gold[cid]):
-                                match = (g[0] == p)
-                            else:
-                                match = sorted(map(repr, g[0])) == sorted(map(repr, p))
-                            ex = 1 if match else 0
-                            if ex and not ex_orig:
-                                n_recovered += 1
+            raw_sql = r.get("pred_sql", "") or ""
+            # 清理规则对每一条记录一律适用，与原判是 0 还是 1 无关
+            ex = judge(args.db, gold[cid], goldres.get(cid), clean_sql(raw_sql))
+            if ex_orig == 0 and ex == 1:
+                n_up += 1
+            elif ex_orig == 1 and ex == 0:
+                n_down += 1
             records.append({
                 "model": r["model"], "method": r["method"],
                 "case_id": cid, "difficulty": diff.get(cid),
@@ -141,24 +156,26 @@ def main():
     try:
         import pandas as pd
         df = pd.DataFrame(records)
-        print(f"重评测记录数: {len(df)}  |  恢复(误判→正确): {n_recovered} 条")
-        print(f"总体 EX  修复前={df.ex_orig.mean():.4f}  修复后={df.ex.mean():.4f}\n")
+        print(f"重评测记录数: {len(df)}  |  清理规则对全部记录一律适用")
+        print(f"  由 0 → 1（原误判、清理后正确）: {n_up} 条")
+        print(f"  由 1 → 0（原判正确、清理后错误）: {n_down} 条")
+        print(f"总体 EX  清理前={df.ex_orig.mean():.4f}  清理后={df.ex.mean():.4f}\n")
         order = [m for m in ["zero", "few", "cot", "sl", "cot_sl"] if m in df.method.unique()]
         piv = df.pivot_table(index="model", columns="method", values="ex", aggfunc="mean")[order]
-        print("模型 × 方法  EX 矩阵：")
+        print("模型 × 方法  EX 矩阵（清理后，论文 Table 4.2）：")
         print(piv.round(3).to_string())
         print("\n各方法均值:", {m: round(df[df.method == m].ex.mean(), 3) for m in order})
         os.makedirs(os.path.dirname(args.out) or ".", exist_ok=True)
         df.to_csv(args.out, index=False, encoding="utf-8-sig")
         print(f"\n已写出逐条结果: {args.out}")
+        print("清理前后的完整对照（论文 Table 4.1）：python analysis/sensitivity_cleaning.py")
     except ImportError:
-        # 无 pandas 时的降级输出
         from collections import defaultdict
         agg = defaultdict(lambda: [0, 0])
         for r in records:
             k = (r["model"], r["method"])
             agg[k][0] += r["ex"]; agg[k][1] += 1
-        print(f"重评测记录数: {len(records)}  |  恢复: {n_recovered} 条\n")
+        print(f"重评测记录数: {len(records)}  |  0→1: {n_up} 条  1→0: {n_down} 条\n")
         for (m, meth), (s, n) in sorted(agg.items()):
             print(f"  {m:<24} {meth:<8} EX={s/n:.3f} ({s}/{n})")
 

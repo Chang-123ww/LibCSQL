@@ -135,7 +135,7 @@ def main():
     piv["Model Mean"] = piv.mean(axis=1)
     piv.loc["Method Mean"] = piv.mean(axis=0)
     piv.round(3).to_csv(os.path.join(OUT, "ex_matrix.csv"), encoding="utf-8-sig")
-    print("\n== Table 4.1  EX by Model × Prompt Method ==")
+    print("\n== Table 4.2  EX by Model × Prompt Method ==")
     print(piv.round(3).to_string())
 
     # ---- 3. 边际均值与极差（论文 4.2.4 的依据）----
@@ -153,7 +153,7 @@ def main():
     sub = df.pivot_table(index="difficulty", columns="method", values="ex", aggfunc="mean")
     sub = sub.loc[ordered(sub.index, DIFFICULTY_ORDER), ordered(sub.columns, METHOD_ORDER)]
     sub.round(3).to_csv(os.path.join(OUT, "subgroup_by_difficulty.csv"), encoding="utf-8-sig")
-    print("\n== Table 4.2  EX by Query Difficulty × Prompt Method ==")
+    print("\n== Table 4.3  EX by Query Difficulty × Prompt Method ==")
     print(sub.round(3).to_string())
 
     # ---- 5. 分模型成本（Table 4.3）----
@@ -167,7 +167,7 @@ def main():
         for m, r in cost.iterrows()]
     cost = cost.loc[ordered(cost.index, MODEL_ORDER)].round(3)
     cost.to_csv(os.path.join(OUT, "cost_by_model.csv"), encoding="utf-8-sig")
-    print("\n== Table 4.3  Accuracy, latency, and cost by model ==")
+    print("\n== Table 4.4  Accuracy, latency, and cost by model ==")
     print(cost.to_string())
     print(f"成本单位: {currency} / 每 1000 次查询；单价取自 config.yaml，"
           f"核对日期 {checked_on}。价格会变动，复现前请重新核对。")
