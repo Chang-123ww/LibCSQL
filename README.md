@@ -230,13 +230,13 @@ L4-031 复核人讨论后撤回意见，维持原 SQL；L1-030、L1-043（“X�
 如使用本测试集或代码，请引用：
 
 > He, X. (2026). LibCSQL: A NL2SQL test set and experimental framework for
-> academic library circulation scenarios (Version 1.0.2) [Data set and software].
-> Zenodo. https://doi.org/10.5281/zenodo.21787853
+> academic library circulation scenarios (Version 1.0.3) [Data set and software].
+> Zenodo. https://doi.org/10.5281/zenodo.23137104
 
 对应的 GitHub 仓库为 https://github.com/Chang-123ww/LibCSQL 。v1.0.2 归档之后，本仓库
 将清理规则改为对全部记录双向施加、新增 `analysis/sensitivity_cleaning.py` 与 `analysis/fewshot_overlap.py`，
 并按独立复核修订了 4 条 gold SQL（见上文）；后一项改变了 `data/test_cases.json` 与 `results/revalidated.csv`，
-因此论文最终版对应的是包含复核修订的新归档版本（v1.0.3），而不是 v1.0.2。
+因此论文最终版引用的是包含复核修订的新归档版本 v1.0.3（DOI 10.5281/zenodo.23137104），而不是 v1.0.2（DOI 10.5281/zenodo.21787853）。
 
 ## 许可
 
