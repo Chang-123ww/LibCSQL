@@ -42,7 +42,10 @@ LibCSQL/
 │   └── quick_stats.py         快速统计（EX/LF/Token 分模型分难度）
 ├── analysis/
 │   ├── descriptive_analysis.py   描述统计与热力图（论文表 4.2–4.4、图 4.1）
-│   └── sensitivity_cleaning.py   清理规则前后对照（论文表 4.1）
+│   ├── sensitivity_cleaning.py   清理规则前后对照（论文表 4.1）
+│   └── fewshot_overlap.py        few-shot 示例同型题检查与排除后重算（论文 4.2.7 节、附录 C.5、表 C.1）
+├── review/
+│   └── GoldSQL_Independent_Review_200.xlsx  gold SQL 独立复核表与分歧处理记录（论文 3.4.1 节）
 └── results/
     ├── raw/*.jsonl            5000 条原始查询记录（每次调用一行）
     ├── revalidated.csv        reevaluate.py 校正后的判定（论文全部准确率数字的来源）
@@ -150,7 +153,7 @@ Zero-shot、Few-shot、Chain-of-Thought (CoT)、Schema-Linking (SL)、CoT + Sche
 不区分原判是 0 还是 1，因此两个方向的变动条数都可核查（见论文表 4.1 与 analysis/sensitivity_cleaning.py）。
 
 在本次实验数据上，清理规则对全部 5,000 条记录一律施加，其中 32 条由 0 变 1、0 条由 1 变 0，
-总体 EX 由 0.690 升至 0.696。双向施加是必要的：只有这样，“无一条反向变化”才是可检验的实证结果，
+总体 EX 由 0.699 升至 0.706（清理前后都对照复核后的 gold，见下文“gold SQL 独立复核”）。双向施加是必要的：只有这样，“无一条反向变化”才是可检验的实证结果，
 而不是流程本身保证的结论。恢复集中在机制所预期的位置：32 条中有 31 条属于
 qwen2.5-coder:7b 的 CoT 条件。论文第 4 章的全部准确率数字均以校正后的
 `results/revalidated.csv` 为准。
@@ -168,7 +171,23 @@ qwen2.5-coder:7b 的 CoT 条件。论文第 4 章的全部准确率数字均以�
 6. `other_execution_error` —— 其余执行失败
 7. `result_mismatch` —— SQL 可执行，但结果集与标注 SQL 不一致
 
-本次实验中 `api_error` 为 0 条，`correct` 为 3,482 条，其余五类合计 1,518 条，即论文表 4.5 的五行。
+本次实验中 `api_error` 为 0 条，`correct` 为 3,528 条，其余五类合计 1,472 条，即论文表 4.5 的五行（对照复核后的 gold）。
+
+## gold SQL 独立复核（2026 年 10 月）
+
+200 条 gold SQL 由第二人（作者所在图书馆信息科科长，未参与出题）逐条独立复核，复核表与分歧处理记录见
+`review/GoldSQL_Independent_Review_200.xlsx`。复核结果：193 条正确、5 条有误、2 条有歧义。讨论后修订 4 条：
+
+| 编号 | 修订内容 |
+|------|----------|
+| L1-024 | 同时判断“从未被借过”与“复本全部在架”两个条件 |
+| L4-024 | 续借判定改为 renew_count >= 1，阈值落在“不同图书数 >= 2” |
+| L4-025 | “在馆可借”按术语约定改为 available_copies > 0 |
+| L4-046 | 平均值的分母改为全部读者（含未归还数为 0 的读者） |
+
+L4-031 复核人讨论后撤回意见，维持原 SQL；L1-030、L1-043（“X月之后”）维持原 SQL，其口径为“晚于 X 月 1 日”。
+修订后用 `reevaluate.py` 对已存的 5,000 条模型输出重新评分，未重新调用任何模型；总体 EX 由 0.696 变为 0.706，
+模型与方法的排序均不变。
 
 ## 关于统计口径
 
@@ -192,7 +211,8 @@ qwen2.5-coder:7b 的 CoT 条件。论文第 4 章的全部准确率数字均以�
 
 ## 已知说明
 
-- `results/raw/*.jsonl` 中的 `ex` 字段为“校正前”判定，`error_type` 字段未使用（恒为空）。
+- `results/raw/*.jsonl` 中的 `ex` 字段为实验运行时的判定（既未清理残渣，也对照复核前的 gold），`error_type` 字段未使用（恒为空）。
+`results/revalidated.csv` 中 `ex_orig` 即该字段；`ex_raw` 为用复核后 gold 判定未清理 SQL 的结果（论文表 4.1“清理前”）；`ex` 为论文所用判定。
 论文第 4 章的全部 EX 数字以 `results/revalidated.csv` 为准；失败分类以
 `results/error_classification.csv` 为准。分析脚本已强制读取前者，缺失时会报错退出。
 
@@ -213,10 +233,10 @@ qwen2.5-coder:7b 的 CoT 条件。论文第 4 章的全部准确率数字均以�
 > academic library circulation scenarios (Version 1.0.2) [Data set and software].
 > Zenodo. https://doi.org/10.5281/zenodo.21787853
 
-对应的 GitHub 仓库为 https://github.com/Chang-123ww/LibCSQL 。论文引用的是上述
-Zenodo 归档版本（对应 v1.0.2 标签）。归档之后本仓库 main 分支有若干修订：将清理规则
-改为对全部记录双向施加、新增 `analysis/sensitivity_cleaning.py`、并同步更新本说明；
-论文报告的全部数字不受这些修订影响（`results/revalidated.csv` 内容逐行未变）。
+对应的 GitHub 仓库为 https://github.com/Chang-123ww/LibCSQL 。v1.0.2 归档之后，本仓库
+将清理规则改为对全部记录双向施加、新增 `analysis/sensitivity_cleaning.py` 与 `analysis/fewshot_overlap.py`，
+并按独立复核修订了 4 条 gold SQL（见上文）；后一项改变了 `data/test_cases.json` 与 `results/revalidated.csv`，
+因此论文最终版对应的是包含复核修订的新归档版本（v1.0.3），而不是 v1.0.2。
 
 ## 许可
 

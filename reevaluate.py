@@ -26,7 +26,10 @@ reevaluate.py — 对 results/raw/*.jsonl 重新判定 EX（修复 JSON 残渣�
 输出：
   控制台打印 清理前/后 EX 对比、双向变动条数、模型×方法矩阵
   --out 指定时写出逐条重评测结果 csv（默认 results/revalidated.csv）
-  列 ex_orig = 原始运行时的判定；ex = 施加清理规则后的判定（论文所用）
+  列 ex_orig = 实验运行时的判定（对照复核前的 gold，仅作留档）；
+     ex_raw  = 用当前 gold 判定未清理的 SQL（论文表 4.1 的“清理前”）；
+     ex      = 用当前 gold 判定清理后的 SQL（论文所用）
+  2026-10 gold SQL 经第二人独立复核，L1-024、L4-024、L4-025、L4-046 四条已修订（见 review/）。
 """
 import argparse
 import glob
@@ -135,18 +138,20 @@ def main():
         for line in open(f, encoding="utf-8"):
             r = json.loads(line)
             cid = r["case_id"]
-            ex_orig = r.get("ex", 0)
+            ex_orig = r.get("ex", 0)          # 实验运行时的判定（对照的是复核前的 gold）
             raw_sql = r.get("pred_sql", "") or ""
+            # 清理前：用当前（复核后）gold 判定未清理的 SQL；清理后：同一 gold、清理后的 SQL
+            ex_raw = judge(args.db, gold[cid], goldres.get(cid), raw_sql.strip())
             # 清理规则对每一条记录一律适用，与原判是 0 还是 1 无关
             ex = judge(args.db, gold[cid], goldres.get(cid), clean_sql(raw_sql))
-            if ex_orig == 0 and ex == 1:
+            if ex_raw == 0 and ex == 1:
                 n_up += 1
-            elif ex_orig == 1 and ex == 0:
+            elif ex_raw == 1 and ex == 0:
                 n_down += 1
             records.append({
                 "model": r["model"], "method": r["method"],
                 "case_id": cid, "difficulty": diff.get(cid),
-                "ex_orig": ex_orig, "ex": ex,
+                "ex_orig": ex_orig, "ex_raw": ex_raw, "ex": ex,
                 "latency": r.get("latency", 0),
                 "input_tokens": r.get("input_tokens", 0),
                 "output_tokens": r.get("output_tokens", 0),
@@ -159,7 +164,7 @@ def main():
         print(f"重评测记录数: {len(df)}  |  清理规则对全部记录一律适用")
         print(f"  由 0 → 1（原误判、清理后正确）: {n_up} 条")
         print(f"  由 1 → 0（原判正确、清理后错误）: {n_down} 条")
-        print(f"总体 EX  清理前={df.ex_orig.mean():.4f}  清理后={df.ex.mean():.4f}\n")
+        print(f"总体 EX  清理前={df.ex_raw.mean():.4f}  清理后={df.ex.mean():.4f}  （实验运行时、复核前 gold 的判定={df.ex_orig.mean():.4f}）\n")
         order = [m for m in ["zero", "few", "cot", "sl", "cot_sl"] if m in df.method.unique()]
         piv = df.pivot_table(index="model", columns="method", values="ex", aggfunc="mean")[order]
         print("模型 × 方法  EX 矩阵（清理后，论文 Table 4.2）：")
