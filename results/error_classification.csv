@@ -22,7 +22,7 @@ doubao-seed-2-0-mini,cot,L1-020,L1_simple,passed,,1,correct
 doubao-seed-2-0-mini,cot,L1-021,L1_simple,passed,,0,result_mismatch
 doubao-seed-2-0-mini,cot,L1-022,L1_simple,passed,,1,correct
 doubao-seed-2-0-mini,cot,L1-023,L1_simple,passed,,1,correct
-doubao-seed-2-0-mini,cot,L1-024,L1_simple,passed,,0,result_mismatch
+doubao-seed-2-0-mini,cot,L1-024,L1_simple,passed,,1,correct
 doubao-seed-2-0-mini,cot,L1-025,L1_simple,passed,,1,correct
 doubao-seed-2-0-mini,cot,L1-026,L1_simple,passed,,1,correct
 doubao-seed-2-0-mini,cot,L1-027,L1_simple,passed,,1,correct
@@ -172,8 +172,8 @@ doubao-seed-2-0-mini,cot,L4-020,L4_nested,passed,,1,correct
 doubao-seed-2-0-mini,cot,L4-021,L4_nested,passed,,1,correct
 doubao-seed-2-0-mini,cot,L4-022,L4_nested,passed,,1,correct
 doubao-seed-2-0-mini,cot,L4-023,L4_nested,passed,,0,result_mismatch
-doubao-seed-2-0-mini,cot,L4-024,L4_nested,passed,,0,result_mismatch
-doubao-seed-2-0-mini,cot,L4-025,L4_nested,passed,,0,result_mismatch
+doubao-seed-2-0-mini,cot,L4-024,L4_nested,passed,,1,correct
+doubao-seed-2-0-mini,cot,L4-025,L4_nested,passed,,1,correct
 doubao-seed-2-0-mini,cot,L4-026,L4_nested,passed,,0,result_mismatch
 doubao-seed-2-0-mini,cot,L4-027,L4_nested,passed,,1,correct
 doubao-seed-2-0-mini,cot,L4-028,L4_nested,passed,,1,correct
@@ -194,7 +194,7 @@ doubao-seed-2-0-mini,cot,L4-042,L4_nested,passed,,0,result_mismatch
 doubao-seed-2-0-mini,cot,L4-043,L4_nested,passed,,0,result_mismatch
 doubao-seed-2-0-mini,cot,L4-044,L4_nested,passed,,0,result_mismatch
 doubao-seed-2-0-mini,cot,L4-045,L4_nested,passed,,0,result_mismatch
-doubao-seed-2-0-mini,cot,L4-046,L4_nested,passed,,0,result_mismatch
+doubao-seed-2-0-mini,cot,L4-046,L4_nested,passed,,1,correct
 doubao-seed-2-0-mini,cot,L4-047,L4_nested,passed,,0,result_mismatch
 doubao-seed-2-0-mini,cot,L4-048,L4_nested,passed,,1,correct
 doubao-seed-2-0-mini,cot,L4-049,L4_nested,passed,,0,result_mismatch
@@ -222,7 +222,7 @@ doubao-seed-2-0-mini,cot_sl,L1-020,L1_simple,passed,,1,correct
 doubao-seed-2-0-mini,cot_sl,L1-021,L1_simple,passed,,0,result_mismatch
 doubao-seed-2-0-mini,cot_sl,L1-022,L1_simple,passed,,1,correct
 doubao-seed-2-0-mini,cot_sl,L1-023,L1_simple,passed,,1,correct
-doubao-seed-2-0-mini,cot_sl,L1-024,L1_simple,passed,,0,result_mismatch
+doubao-seed-2-0-mini,cot_sl,L1-024,L1_simple,passed,,1,correct
 doubao-seed-2-0-mini,cot_sl,L1-025,L1_simple,passed,,1,correct
 doubao-seed-2-0-mini,cot_sl,L1-026,L1_simple,passed,,1,correct
 doubao-seed-2-0-mini,cot_sl,L1-027,L1_simple,passed,,1,correct
@@ -372,8 +372,8 @@ doubao-seed-2-0-mini,cot_sl,L4-020,L4_nested,passed,,1,correct
 doubao-seed-2-0-mini,cot_sl,L4-021,L4_nested,passed,,1,correct
 doubao-seed-2-0-mini,cot_sl,L4-022,L4_nested,passed,,1,correct
 doubao-seed-2-0-mini,cot_sl,L4-023,L4_nested,passed,,0,result_mismatch
-doubao-seed-2-0-mini,cot_sl,L4-024,L4_nested,passed,,0,result_mismatch
-doubao-seed-2-0-mini,cot_sl,L4-025,L4_nested,passed,,0,result_mismatch
+doubao-seed-2-0-mini,cot_sl,L4-024,L4_nested,passed,,1,correct
+doubao-seed-2-0-mini,cot_sl,L4-025,L4_nested,passed,,1,correct
 doubao-seed-2-0-mini,cot_sl,L4-026,L4_nested,passed,,0,result_mismatch
 doubao-seed-2-0-mini,cot_sl,L4-027,L4_nested,passed,,1,correct
 doubao-seed-2-0-mini,cot_sl,L4-028,L4_nested,passed,,0,result_mismatch
@@ -394,7 +394,7 @@ doubao-seed-2-0-mini,cot_sl,L4-042,L4_nested,passed,,0,result_mismatch
 doubao-seed-2-0-mini,cot_sl,L4-043,L4_nested,passed,,0,result_mismatch
 doubao-seed-2-0-mini,cot_sl,L4-044,L4_nested,passed,,0,result_mismatch
 doubao-seed-2-0-mini,cot_sl,L4-045,L4_nested,passed,no such column: publish_year,0,schema_reference_error
-doubao-seed-2-0-mini,cot_sl,L4-046,L4_nested,passed,,0,result_mismatch
+doubao-seed-2-0-mini,cot_sl,L4-046,L4_nested,passed,,1,correct
 doubao-seed-2-0-mini,cot_sl,L4-047,L4_nested,passed,,0,result_mismatch
 doubao-seed-2-0-mini,cot_sl,L4-048,L4_nested,passed,,1,correct
 doubao-seed-2-0-mini,cot_sl,L4-049,L4_nested,passed,,0,result_mismatch
@@ -422,7 +422,7 @@ doubao-seed-2-0-mini,few,L1-020,L1_simple,passed,,1,correct
 doubao-seed-2-0-mini,few,L1-021,L1_simple,passed,,1,correct
 doubao-seed-2-0-mini,few,L1-022,L1_simple,passed,,1,correct
 doubao-seed-2-0-mini,few,L1-023,L1_simple,passed,,1,correct
-doubao-seed-2-0-mini,few,L1-024,L1_simple,passed,,0,result_mismatch
+doubao-seed-2-0-mini,few,L1-024,L1_simple,passed,,1,correct
 doubao-seed-2-0-mini,few,L1-025,L1_simple,passed,,1,correct
 doubao-seed-2-0-mini,few,L1-026,L1_simple,passed,,1,correct
 doubao-seed-2-0-mini,few,L1-027,L1_simple,passed,,1,correct
@@ -572,8 +572,8 @@ doubao-seed-2-0-mini,few,L4-020,L4_nested,passed,,1,correct
 doubao-seed-2-0-mini,few,L4-021,L4_nested,passed,,1,correct
 doubao-seed-2-0-mini,few,L4-022,L4_nested,passed,,1,correct
 doubao-seed-2-0-mini,few,L4-023,L4_nested,passed,,0,result_mismatch
-doubao-seed-2-0-mini,few,L4-024,L4_nested,passed,,0,result_mismatch
-doubao-seed-2-0-mini,few,L4-025,L4_nested,passed,,0,result_mismatch
+doubao-seed-2-0-mini,few,L4-024,L4_nested,passed,,1,correct
+doubao-seed-2-0-mini,few,L4-025,L4_nested,passed,,1,correct
 doubao-seed-2-0-mini,few,L4-026,L4_nested,passed,,0,result_mismatch
 doubao-seed-2-0-mini,few,L4-027,L4_nested,passed,,1,correct
 doubao-seed-2-0-mini,few,L4-028,L4_nested,passed,,0,result_mismatch
@@ -594,7 +594,7 @@ doubao-seed-2-0-mini,few,L4-042,L4_nested,passed,,0,result_mismatch
 doubao-seed-2-0-mini,few,L4-043,L4_nested,passed,,0,result_mismatch
 doubao-seed-2-0-mini,few,L4-044,L4_nested,passed,,0,result_mismatch
 doubao-seed-2-0-mini,few,L4-045,L4_nested,passed,,0,result_mismatch
-doubao-seed-2-0-mini,few,L4-046,L4_nested,passed,,0,result_mismatch
+doubao-seed-2-0-mini,few,L4-046,L4_nested,passed,,1,correct
 doubao-seed-2-0-mini,few,L4-047,L4_nested,passed,,0,result_mismatch
 doubao-seed-2-0-mini,few,L4-048,L4_nested,passed,,1,correct
 doubao-seed-2-0-mini,few,L4-049,L4_nested,passed,,0,result_mismatch
@@ -622,7 +622,7 @@ doubao-seed-2-0-mini,sl,L1-020,L1_simple,passed,,1,correct
 doubao-seed-2-0-mini,sl,L1-021,L1_simple,passed,,0,result_mismatch
 doubao-seed-2-0-mini,sl,L1-022,L1_simple,passed,,1,correct
 doubao-seed-2-0-mini,sl,L1-023,L1_simple,passed,,1,correct
-doubao-seed-2-0-mini,sl,L1-024,L1_simple,passed,,0,result_mismatch
+doubao-seed-2-0-mini,sl,L1-024,L1_simple,passed,,1,correct
 doubao-seed-2-0-mini,sl,L1-025,L1_simple,passed,,1,correct
 doubao-seed-2-0-mini,sl,L1-026,L1_simple,passed,,1,correct
 doubao-seed-2-0-mini,sl,L1-027,L1_simple,passed,,1,correct
@@ -772,8 +772,8 @@ doubao-seed-2-0-mini,sl,L4-020,L4_nested,passed,,1,correct
 doubao-seed-2-0-mini,sl,L4-021,L4_nested,passed,,1,correct
 doubao-seed-2-0-mini,sl,L4-022,L4_nested,passed,,1,correct
 doubao-seed-2-0-mini,sl,L4-023,L4_nested,passed,,0,result_mismatch
-doubao-seed-2-0-mini,sl,L4-024,L4_nested,passed,,0,result_mismatch
-doubao-seed-2-0-mini,sl,L4-025,L4_nested,passed,,0,result_mismatch
+doubao-seed-2-0-mini,sl,L4-024,L4_nested,passed,,1,correct
+doubao-seed-2-0-mini,sl,L4-025,L4_nested,passed,,1,correct
 doubao-seed-2-0-mini,sl,L4-026,L4_nested,passed,,0,result_mismatch
 doubao-seed-2-0-mini,sl,L4-027,L4_nested,passed,,1,correct
 doubao-seed-2-0-mini,sl,L4-028,L4_nested,passed,,0,result_mismatch
@@ -794,7 +794,7 @@ doubao-seed-2-0-mini,sl,L4-042,L4_nested,passed,,0,result_mismatch
 doubao-seed-2-0-mini,sl,L4-043,L4_nested,passed,,0,result_mismatch
 doubao-seed-2-0-mini,sl,L4-044,L4_nested,passed,,0,result_mismatch
 doubao-seed-2-0-mini,sl,L4-045,L4_nested,passed,,0,result_mismatch
-doubao-seed-2-0-mini,sl,L4-046,L4_nested,passed,,0,result_mismatch
+doubao-seed-2-0-mini,sl,L4-046,L4_nested,passed,,1,correct
 doubao-seed-2-0-mini,sl,L4-047,L4_nested,passed,,0,result_mismatch
 doubao-seed-2-0-mini,sl,L4-048,L4_nested,passed,,1,correct
 doubao-seed-2-0-mini,sl,L4-049,L4_nested,passed,,0,result_mismatch
@@ -822,7 +822,7 @@ doubao-seed-2-0-mini,zero,L1-020,L1_simple,passed,,1,correct
 doubao-seed-2-0-mini,zero,L1-021,L1_simple,passed,,0,result_mismatch
 doubao-seed-2-0-mini,zero,L1-022,L1_simple,passed,,1,correct
 doubao-seed-2-0-mini,zero,L1-023,L1_simple,passed,,1,correct
-doubao-seed-2-0-mini,zero,L1-024,L1_simple,passed,,0,result_mismatch
+doubao-seed-2-0-mini,zero,L1-024,L1_simple,passed,,1,correct
 doubao-seed-2-0-mini,zero,L1-025,L1_simple,passed,,1,correct
 doubao-seed-2-0-mini,zero,L1-026,L1_simple,passed,,1,correct
 doubao-seed-2-0-mini,zero,L1-027,L1_simple,passed,,1,correct
@@ -972,8 +972,8 @@ doubao-seed-2-0-mini,zero,L4-020,L4_nested,passed,,1,correct
 doubao-seed-2-0-mini,zero,L4-021,L4_nested,passed,,1,correct
 doubao-seed-2-0-mini,zero,L4-022,L4_nested,passed,,1,correct
 doubao-seed-2-0-mini,zero,L4-023,L4_nested,passed,,1,correct
-doubao-seed-2-0-mini,zero,L4-024,L4_nested,passed,,0,result_mismatch
-doubao-seed-2-0-mini,zero,L4-025,L4_nested,passed,,0,result_mismatch
+doubao-seed-2-0-mini,zero,L4-024,L4_nested,passed,,1,correct
+doubao-seed-2-0-mini,zero,L4-025,L4_nested,passed,,1,correct
 doubao-seed-2-0-mini,zero,L4-026,L4_nested,passed,,0,result_mismatch
 doubao-seed-2-0-mini,zero,L4-027,L4_nested,passed,,1,correct
 doubao-seed-2-0-mini,zero,L4-028,L4_nested,passed,,0,result_mismatch
@@ -994,7 +994,7 @@ doubao-seed-2-0-mini,zero,L4-042,L4_nested,passed,,1,correct
 doubao-seed-2-0-mini,zero,L4-043,L4_nested,passed,,0,result_mismatch
 doubao-seed-2-0-mini,zero,L4-044,L4_nested,passed,,0,result_mismatch
 doubao-seed-2-0-mini,zero,L4-045,L4_nested,passed,,0,result_mismatch
-doubao-seed-2-0-mini,zero,L4-046,L4_nested,passed,,0,result_mismatch
+doubao-seed-2-0-mini,zero,L4-046,L4_nested,passed,,1,correct
 doubao-seed-2-0-mini,zero,L4-047,L4_nested,passed,,0,result_mismatch
 doubao-seed-2-0-mini,zero,L4-048,L4_nested,passed,,1,correct
 doubao-seed-2-0-mini,zero,L4-049,L4_nested,passed,,0,result_mismatch
@@ -1022,7 +1022,7 @@ ernie-4.5-turbo-32k,cot,L1-020,L1_simple,passed,,1,correct
 ernie-4.5-turbo-32k,cot,L1-021,L1_simple,multiple_statements,,0,security_rejection
 ernie-4.5-turbo-32k,cot,L1-022,L1_simple,passed,,1,correct
 ernie-4.5-turbo-32k,cot,L1-023,L1_simple,passed,,1,correct
-ernie-4.5-turbo-32k,cot,L1-024,L1_simple,passed,,0,result_mismatch
+ernie-4.5-turbo-32k,cot,L1-024,L1_simple,passed,,1,correct
 ernie-4.5-turbo-32k,cot,L1-025,L1_simple,passed,,0,result_mismatch
 ernie-4.5-turbo-32k,cot,L1-026,L1_simple,passed,,1,correct
 ernie-4.5-turbo-32k,cot,L1-027,L1_simple,passed,,1,correct
@@ -1172,8 +1172,8 @@ ernie-4.5-turbo-32k,cot,L4-020,L4_nested,passed,no such column: r.reader_id,0,sc
 ernie-4.5-turbo-32k,cot,L4-021,L4_nested,passed,,0,result_mismatch
 ernie-4.5-turbo-32k,cot,L4-022,L4_nested,passed,,1,correct
 ernie-4.5-turbo-32k,cot,L4-023,L4_nested,passed,,0,result_mismatch
-ernie-4.5-turbo-32k,cot,L4-024,L4_nested,passed,,1,correct
-ernie-4.5-turbo-32k,cot,L4-025,L4_nested,passed,,0,result_mismatch
+ernie-4.5-turbo-32k,cot,L4-024,L4_nested,passed,,0,result_mismatch
+ernie-4.5-turbo-32k,cot,L4-025,L4_nested,passed,,1,correct
 ernie-4.5-turbo-32k,cot,L4-026,L4_nested,passed,,0,result_mismatch
 ernie-4.5-turbo-32k,cot,L4-027,L4_nested,passed,,1,correct
 ernie-4.5-turbo-32k,cot,L4-028,L4_nested,passed,,1,correct
@@ -1194,7 +1194,7 @@ ernie-4.5-turbo-32k,cot,L4-042,L4_nested,passed,,0,result_mismatch
 ernie-4.5-turbo-32k,cot,L4-043,L4_nested,passed,no such column: zero_available.zero_available,0,schema_reference_error
 ernie-4.5-turbo-32k,cot,L4-044,L4_nested,passed,,0,result_mismatch
 ernie-4.5-turbo-32k,cot,L4-045,L4_nested,passed,,0,result_mismatch
-ernie-4.5-turbo-32k,cot,L4-046,L4_nested,passed,,1,correct
+ernie-4.5-turbo-32k,cot,L4-046,L4_nested,passed,,0,result_mismatch
 ernie-4.5-turbo-32k,cot,L4-047,L4_nested,passed,,0,result_mismatch
 ernie-4.5-turbo-32k,cot,L4-048,L4_nested,passed,,1,correct
 ernie-4.5-turbo-32k,cot,L4-049,L4_nested,passed,,0,result_mismatch
@@ -1394,7 +1394,7 @@ ernie-4.5-turbo-32k,cot_sl,L4-042,L4_nested,passed,,0,result_mismatch
 ernie-4.5-turbo-32k,cot_sl,L4-043,L4_nested,passed,,0,result_mismatch
 ernie-4.5-turbo-32k,cot_sl,L4-044,L4_nested,passed,,0,result_mismatch
 ernie-4.5-turbo-32k,cot_sl,L4-045,L4_nested,passed,,0,result_mismatch
-ernie-4.5-turbo-32k,cot_sl,L4-046,L4_nested,passed,,1,correct
+ernie-4.5-turbo-32k,cot_sl,L4-046,L4_nested,passed,,0,result_mismatch
 ernie-4.5-turbo-32k,cot_sl,L4-047,L4_nested,passed,,0,result_mismatch
 ernie-4.5-turbo-32k,cot_sl,L4-048,L4_nested,passed,,1,correct
 ernie-4.5-turbo-32k,cot_sl,L4-049,L4_nested,passed,no such column: b.location_id,0,schema_reference_error
@@ -1422,7 +1422,7 @@ ernie-4.5-turbo-32k,few,L1-020,L1_simple,passed,,1,correct
 ernie-4.5-turbo-32k,few,L1-021,L1_simple,passed,,1,correct
 ernie-4.5-turbo-32k,few,L1-022,L1_simple,passed,,1,correct
 ernie-4.5-turbo-32k,few,L1-023,L1_simple,passed,,1,correct
-ernie-4.5-turbo-32k,few,L1-024,L1_simple,passed,,0,result_mismatch
+ernie-4.5-turbo-32k,few,L1-024,L1_simple,passed,,1,correct
 ernie-4.5-turbo-32k,few,L1-025,L1_simple,passed,,1,correct
 ernie-4.5-turbo-32k,few,L1-026,L1_simple,passed,,1,correct
 ernie-4.5-turbo-32k,few,L1-027,L1_simple,passed,,1,correct
@@ -1572,8 +1572,8 @@ ernie-4.5-turbo-32k,few,L4-020,L4_nested,passed,,1,correct
 ernie-4.5-turbo-32k,few,L4-021,L4_nested,passed,,1,correct
 ernie-4.5-turbo-32k,few,L4-022,L4_nested,passed,,1,correct
 ernie-4.5-turbo-32k,few,L4-023,L4_nested,passed,,0,result_mismatch
-ernie-4.5-turbo-32k,few,L4-024,L4_nested,passed,,0,result_mismatch
-ernie-4.5-turbo-32k,few,L4-025,L4_nested,passed,,0,result_mismatch
+ernie-4.5-turbo-32k,few,L4-024,L4_nested,passed,,1,correct
+ernie-4.5-turbo-32k,few,L4-025,L4_nested,passed,,1,correct
 ernie-4.5-turbo-32k,few,L4-026,L4_nested,passed,,0,result_mismatch
 ernie-4.5-turbo-32k,few,L4-027,L4_nested,passed,,1,correct
 ernie-4.5-turbo-32k,few,L4-028,L4_nested,passed,,0,result_mismatch
@@ -1594,7 +1594,7 @@ ernie-4.5-turbo-32k,few,L4-042,L4_nested,passed,,0,result_mismatch
 ernie-4.5-turbo-32k,few,L4-043,L4_nested,passed,no such column: zero_available.zero_available,0,schema_reference_error
 ernie-4.5-turbo-32k,few,L4-044,L4_nested,passed,,0,result_mismatch
 ernie-4.5-turbo-32k,few,L4-045,L4_nested,passed,,0,result_mismatch
-ernie-4.5-turbo-32k,few,L4-046,L4_nested,passed,,1,correct
+ernie-4.5-turbo-32k,few,L4-046,L4_nested,passed,,0,result_mismatch
 ernie-4.5-turbo-32k,few,L4-047,L4_nested,passed,,0,result_mismatch
 ernie-4.5-turbo-32k,few,L4-048,L4_nested,passed,,1,correct
 ernie-4.5-turbo-32k,few,L4-049,L4_nested,passed,,0,result_mismatch
@@ -1622,7 +1622,7 @@ ernie-4.5-turbo-32k,sl,L1-020,L1_simple,passed,,1,correct
 ernie-4.5-turbo-32k,sl,L1-021,L1_simple,passed,,0,result_mismatch
 ernie-4.5-turbo-32k,sl,L1-022,L1_simple,passed,,1,correct
 ernie-4.5-turbo-32k,sl,L1-023,L1_simple,passed,,1,correct
-ernie-4.5-turbo-32k,sl,L1-024,L1_simple,passed,,0,result_mismatch
+ernie-4.5-turbo-32k,sl,L1-024,L1_simple,passed,,1,correct
 ernie-4.5-turbo-32k,sl,L1-025,L1_simple,passed,,1,correct
 ernie-4.5-turbo-32k,sl,L1-026,L1_simple,passed,,1,correct
 ernie-4.5-turbo-32k,sl,L1-027,L1_simple,passed,,1,correct
@@ -1773,7 +1773,7 @@ ernie-4.5-turbo-32k,sl,L4-021,L4_nested,passed,,1,correct
 ernie-4.5-turbo-32k,sl,L4-022,L4_nested,passed,,1,correct
 ernie-4.5-turbo-32k,sl,L4-023,L4_nested,passed,,0,result_mismatch
 ernie-4.5-turbo-32k,sl,L4-024,L4_nested,passed,,0,result_mismatch
-ernie-4.5-turbo-32k,sl,L4-025,L4_nested,passed,,0,result_mismatch
+ernie-4.5-turbo-32k,sl,L4-025,L4_nested,passed,,1,correct
 ernie-4.5-turbo-32k,sl,L4-026,L4_nested,passed,,0,result_mismatch
 ernie-4.5-turbo-32k,sl,L4-027,L4_nested,passed,,1,correct
 ernie-4.5-turbo-32k,sl,L4-028,L4_nested,passed,,1,correct
@@ -1794,7 +1794,7 @@ ernie-4.5-turbo-32k,sl,L4-042,L4_nested,passed,,0,result_mismatch
 ernie-4.5-turbo-32k,sl,L4-043,L4_nested,passed,no such column: zero_available.zero_available,0,schema_reference_error
 ernie-4.5-turbo-32k,sl,L4-044,L4_nested,passed,,0,result_mismatch
 ernie-4.5-turbo-32k,sl,L4-045,L4_nested,passed,,0,result_mismatch
-ernie-4.5-turbo-32k,sl,L4-046,L4_nested,passed,,1,correct
+ernie-4.5-turbo-32k,sl,L4-046,L4_nested,passed,,0,result_mismatch
 ernie-4.5-turbo-32k,sl,L4-047,L4_nested,passed,"near ""borrow_counts"": syntax error",0,syntax_error
 ernie-4.5-turbo-32k,sl,L4-048,L4_nested,passed,,0,result_mismatch
 ernie-4.5-turbo-32k,sl,L4-049,L4_nested,passed,,0,result_mismatch
@@ -1822,7 +1822,7 @@ ernie-4.5-turbo-32k,zero,L1-020,L1_simple,passed,,1,correct
 ernie-4.5-turbo-32k,zero,L1-021,L1_simple,passed,,0,result_mismatch
 ernie-4.5-turbo-32k,zero,L1-022,L1_simple,passed,,1,correct
 ernie-4.5-turbo-32k,zero,L1-023,L1_simple,passed,,1,correct
-ernie-4.5-turbo-32k,zero,L1-024,L1_simple,passed,,0,result_mismatch
+ernie-4.5-turbo-32k,zero,L1-024,L1_simple,passed,,1,correct
 ernie-4.5-turbo-32k,zero,L1-025,L1_simple,passed,,1,correct
 ernie-4.5-turbo-32k,zero,L1-026,L1_simple,passed,,1,correct
 ernie-4.5-turbo-32k,zero,L1-027,L1_simple,passed,,1,correct
@@ -1972,8 +1972,8 @@ ernie-4.5-turbo-32k,zero,L4-020,L4_nested,passed,,1,correct
 ernie-4.5-turbo-32k,zero,L4-021,L4_nested,passed,,1,correct
 ernie-4.5-turbo-32k,zero,L4-022,L4_nested,passed,,1,correct
 ernie-4.5-turbo-32k,zero,L4-023,L4_nested,passed,"near ""categories"": syntax error",0,syntax_error
-ernie-4.5-turbo-32k,zero,L4-024,L4_nested,passed,,0,result_mismatch
-ernie-4.5-turbo-32k,zero,L4-025,L4_nested,passed,,0,result_mismatch
+ernie-4.5-turbo-32k,zero,L4-024,L4_nested,passed,,1,correct
+ernie-4.5-turbo-32k,zero,L4-025,L4_nested,passed,,1,correct
 ernie-4.5-turbo-32k,zero,L4-026,L4_nested,passed,,0,result_mismatch
 ernie-4.5-turbo-32k,zero,L4-027,L4_nested,passed,,1,correct
 ernie-4.5-turbo-32k,zero,L4-028,L4_nested,passed,,1,correct
@@ -1994,7 +1994,7 @@ ernie-4.5-turbo-32k,zero,L4-042,L4_nested,passed,,0,result_mismatch
 ernie-4.5-turbo-32k,zero,L4-043,L4_nested,passed,,0,result_mismatch
 ernie-4.5-turbo-32k,zero,L4-044,L4_nested,passed,,0,result_mismatch
 ernie-4.5-turbo-32k,zero,L4-045,L4_nested,passed,,0,result_mismatch
-ernie-4.5-turbo-32k,zero,L4-046,L4_nested,passed,,1,correct
+ernie-4.5-turbo-32k,zero,L4-046,L4_nested,passed,,0,result_mismatch
 ernie-4.5-turbo-32k,zero,L4-047,L4_nested,passed,,0,result_mismatch
 ernie-4.5-turbo-32k,zero,L4-048,L4_nested,passed,,1,correct
 ernie-4.5-turbo-32k,zero,L4-049,L4_nested,passed,,0,result_mismatch
@@ -2022,7 +2022,7 @@ glm-4.7-flashX,cot,L1-020,L1_simple,passed,,1,correct
 glm-4.7-flashX,cot,L1-021,L1_simple,passed,,0,result_mismatch
 glm-4.7-flashX,cot,L1-022,L1_simple,passed,,1,correct
 glm-4.7-flashX,cot,L1-023,L1_simple,passed,,1,correct
-glm-4.7-flashX,cot,L1-024,L1_simple,passed,,0,result_mismatch
+glm-4.7-flashX,cot,L1-024,L1_simple,passed,,1,correct
 glm-4.7-flashX,cot,L1-025,L1_simple,passed,,1,correct
 glm-4.7-flashX,cot,L1-026,L1_simple,passed,,1,correct
 glm-4.7-flashX,cot,L1-027,L1_simple,passed,,1,correct
@@ -2173,8 +2173,8 @@ glm-4.7-flashX,cot,L4-021,L4_nested,passed,,1,correct
 glm-4.7-flashX,cot,L4-022,L4_nested,passed,"near """",
   """": syntax error",0,syntax_error
 glm-4.7-flashX,cot,L4-023,L4_nested,passed,,0,result_mismatch
-glm-4.7-flashX,cot,L4-024,L4_nested,passed,,1,correct
-glm-4.7-flashX,cot,L4-025,L4_nested,passed,,0,result_mismatch
+glm-4.7-flashX,cot,L4-024,L4_nested,passed,,0,result_mismatch
+glm-4.7-flashX,cot,L4-025,L4_nested,passed,,1,correct
 glm-4.7-flashX,cot,L4-026,L4_nested,passed,,0,result_mismatch
 glm-4.7-flashX,cot,L4-027,L4_nested,passed,,1,correct
 glm-4.7-flashX,cot,L4-028,L4_nested,passed,,0,result_mismatch
@@ -2223,7 +2223,7 @@ glm-4.7-flashX,cot_sl,L1-020,L1_simple,passed,,1,correct
 glm-4.7-flashX,cot_sl,L1-021,L1_simple,passed,,0,result_mismatch
 glm-4.7-flashX,cot_sl,L1-022,L1_simple,passed,,1,correct
 glm-4.7-flashX,cot_sl,L1-023,L1_simple,empty_sql,,0,security_rejection
-glm-4.7-flashX,cot_sl,L1-024,L1_simple,passed,,0,result_mismatch
+glm-4.7-flashX,cot_sl,L1-024,L1_simple,passed,,1,correct
 glm-4.7-flashX,cot_sl,L1-025,L1_simple,passed,,1,correct
 glm-4.7-flashX,cot_sl,L1-026,L1_simple,passed,,1,correct
 glm-4.7-flashX,cot_sl,L1-027,L1_simple,passed,,1,correct
@@ -2374,7 +2374,7 @@ glm-4.7-flashX,cot_sl,L4-021,L4_nested,passed,,1,correct
 glm-4.7-flashX,cot_sl,L4-022,L4_nested,empty_sql,,0,security_rejection
 glm-4.7-flashX,cot_sl,L4-023,L4_nested,empty_sql,,0,security_rejection
 glm-4.7-flashX,cot_sl,L4-024,L4_nested,empty_sql,,0,security_rejection
-glm-4.7-flashX,cot_sl,L4-025,L4_nested,passed,,0,result_mismatch
+glm-4.7-flashX,cot_sl,L4-025,L4_nested,passed,,1,correct
 glm-4.7-flashX,cot_sl,L4-026,L4_nested,empty_sql,,0,security_rejection
 glm-4.7-flashX,cot_sl,L4-027,L4_nested,passed,,1,correct
 glm-4.7-flashX,cot_sl,L4-028,L4_nested,empty_sql,,0,security_rejection
@@ -2395,7 +2395,7 @@ glm-4.7-flashX,cot_sl,L4-042,L4_nested,empty_sql,,0,security_rejection
 glm-4.7-flashX,cot_sl,L4-043,L4_nested,empty_sql,,0,security_rejection
 glm-4.7-flashX,cot_sl,L4-044,L4_nested,passed,,0,result_mismatch
 glm-4.7-flashX,cot_sl,L4-045,L4_nested,passed,,0,result_mismatch
-glm-4.7-flashX,cot_sl,L4-046,L4_nested,passed,,1,correct
+glm-4.7-flashX,cot_sl,L4-046,L4_nested,passed,,0,result_mismatch
 glm-4.7-flashX,cot_sl,L4-047,L4_nested,passed,,0,result_mismatch
 glm-4.7-flashX,cot_sl,L4-048,L4_nested,passed,,0,result_mismatch
 glm-4.7-flashX,cot_sl,L4-049,L4_nested,empty_sql,,0,security_rejection
@@ -2574,7 +2574,7 @@ glm-4.7-flashX,few,L4-021,L4_nested,passed,,1,correct
 glm-4.7-flashX,few,L4-022,L4_nested,passed,,1,correct
 glm-4.7-flashX,few,L4-023,L4_nested,empty_sql,,0,security_rejection
 glm-4.7-flashX,few,L4-024,L4_nested,empty_sql,,0,security_rejection
-glm-4.7-flashX,few,L4-025,L4_nested,passed,,0,result_mismatch
+glm-4.7-flashX,few,L4-025,L4_nested,passed,,1,correct
 glm-4.7-flashX,few,L4-026,L4_nested,passed,,0,result_mismatch
 glm-4.7-flashX,few,L4-027,L4_nested,passed,,1,correct
 glm-4.7-flashX,few,L4-028,L4_nested,empty_sql,,0,security_rejection
@@ -2595,7 +2595,7 @@ glm-4.7-flashX,few,L4-042,L4_nested,empty_sql,,0,security_rejection
 glm-4.7-flashX,few,L4-043,L4_nested,empty_sql,,0,security_rejection
 glm-4.7-flashX,few,L4-044,L4_nested,passed,,0,result_mismatch
 glm-4.7-flashX,few,L4-045,L4_nested,passed,"unrecognized token: ""\""",0,syntax_error
-glm-4.7-flashX,few,L4-046,L4_nested,passed,,1,correct
+glm-4.7-flashX,few,L4-046,L4_nested,passed,,0,result_mismatch
 glm-4.7-flashX,few,L4-047,L4_nested,passed,,0,result_mismatch
 glm-4.7-flashX,few,L4-048,L4_nested,passed,,0,result_mismatch
 glm-4.7-flashX,few,L4-049,L4_nested,empty_sql,,0,security_rejection
@@ -2623,7 +2623,7 @@ glm-4.7-flashX,sl,L1-020,L1_simple,passed,,1,correct
 glm-4.7-flashX,sl,L1-021,L1_simple,passed,,0,result_mismatch
 glm-4.7-flashX,sl,L1-022,L1_simple,passed,,1,correct
 glm-4.7-flashX,sl,L1-023,L1_simple,passed,,1,correct
-glm-4.7-flashX,sl,L1-024,L1_simple,passed,,0,result_mismatch
+glm-4.7-flashX,sl,L1-024,L1_simple,passed,,1,correct
 glm-4.7-flashX,sl,L1-025,L1_simple,passed,,1,correct
 glm-4.7-flashX,sl,L1-026,L1_simple,passed,,1,correct
 glm-4.7-flashX,sl,L1-027,L1_simple,passed,,1,correct
@@ -2773,8 +2773,8 @@ glm-4.7-flashX,sl,L4-020,L4_nested,passed,,1,correct
 glm-4.7-flashX,sl,L4-021,L4_nested,passed,,1,correct
 glm-4.7-flashX,sl,L4-022,L4_nested,passed,,1,correct
 glm-4.7-flashX,sl,L4-023,L4_nested,passed,no such column: b.location_id,0,schema_reference_error
-glm-4.7-flashX,sl,L4-024,L4_nested,passed,,1,correct
-glm-4.7-flashX,sl,L4-025,L4_nested,passed,,0,result_mismatch
+glm-4.7-flashX,sl,L4-024,L4_nested,passed,,0,result_mismatch
+glm-4.7-flashX,sl,L4-025,L4_nested,passed,,1,correct
 glm-4.7-flashX,sl,L4-026,L4_nested,passed,,0,result_mismatch
 glm-4.7-flashX,sl,L4-027,L4_nested,empty_sql,,0,security_rejection
 glm-4.7-flashX,sl,L4-028,L4_nested,empty_sql,,0,security_rejection
@@ -2795,7 +2795,7 @@ glm-4.7-flashX,sl,L4-042,L4_nested,empty_sql,,0,security_rejection
 glm-4.7-flashX,sl,L4-043,L4_nested,passed,,0,result_mismatch
 glm-4.7-flashX,sl,L4-044,L4_nested,passed,,0,result_mismatch
 glm-4.7-flashX,sl,L4-045,L4_nested,empty_sql,,0,security_rejection
-glm-4.7-flashX,sl,L4-046,L4_nested,passed,,1,correct
+glm-4.7-flashX,sl,L4-046,L4_nested,passed,,0,result_mismatch
 glm-4.7-flashX,sl,L4-047,L4_nested,passed,,0,result_mismatch
 glm-4.7-flashX,sl,L4-048,L4_nested,passed,,1,correct
 glm-4.7-flashX,sl,L4-049,L4_nested,empty_sql,,0,security_rejection
@@ -2823,7 +2823,7 @@ glm-4.7-flashX,zero,L1-020,L1_simple,passed,,1,correct
 glm-4.7-flashX,zero,L1-021,L1_simple,passed,,0,result_mismatch
 glm-4.7-flashX,zero,L1-022,L1_simple,passed,,1,correct
 glm-4.7-flashX,zero,L1-023,L1_simple,passed,,1,correct
-glm-4.7-flashX,zero,L1-024,L1_simple,passed,,0,result_mismatch
+glm-4.7-flashX,zero,L1-024,L1_simple,passed,,1,correct
 glm-4.7-flashX,zero,L1-025,L1_simple,passed,,1,correct
 glm-4.7-flashX,zero,L1-026,L1_simple,passed,,1,correct
 glm-4.7-flashX,zero,L1-027,L1_simple,passed,,1,correct
@@ -2974,7 +2974,7 @@ glm-4.7-flashX,zero,L4-021,L4_nested,passed,,1,correct
 glm-4.7-flashX,zero,L4-022,L4_nested,passed,,0,result_mismatch
 glm-4.7-flashX,zero,L4-023,L4_nested,empty_sql,,0,security_rejection
 glm-4.7-flashX,zero,L4-024,L4_nested,passed,,0,result_mismatch
-glm-4.7-flashX,zero,L4-025,L4_nested,passed,,0,result_mismatch
+glm-4.7-flashX,zero,L4-025,L4_nested,passed,,1,correct
 glm-4.7-flashX,zero,L4-026,L4_nested,passed,"unrecognized token: ""\""",0,syntax_error
 glm-4.7-flashX,zero,L4-027,L4_nested,passed,,1,correct
 glm-4.7-flashX,zero,L4-028,L4_nested,empty_sql,,0,security_rejection
@@ -2995,7 +2995,7 @@ glm-4.7-flashX,zero,L4-042,L4_nested,passed,,0,result_mismatch
 glm-4.7-flashX,zero,L4-043,L4_nested,empty_sql,,0,security_rejection
 glm-4.7-flashX,zero,L4-044,L4_nested,passed,,0,result_mismatch
 glm-4.7-flashX,zero,L4-045,L4_nested,passed,,0,result_mismatch
-glm-4.7-flashX,zero,L4-046,L4_nested,passed,,1,correct
+glm-4.7-flashX,zero,L4-046,L4_nested,passed,,0,result_mismatch
 glm-4.7-flashX,zero,L4-047,L4_nested,passed,,0,result_mismatch
 glm-4.7-flashX,zero,L4-048,L4_nested,empty_sql,,0,security_rejection
 glm-4.7-flashX,zero,L4-049,L4_nested,empty_sql,,0,security_rejection
@@ -3234,7 +3234,7 @@ qwen2.5-coder:7b,cot,L4-023,L4_nested,passed,"unrecognized token: """"
 }""",0,syntax_error
 qwen2.5-coder:7b,cot,L4-024,L4_nested,passed,"unrecognized token: """"
 }""",0,syntax_error
-qwen2.5-coder:7b,cot,L4-025,L4_nested,passed,,0,result_mismatch
+qwen2.5-coder:7b,cot,L4-025,L4_nested,passed,,1,correct
 qwen2.5-coder:7b,cot,L4-026,L4_nested,passed,"unrecognized token: """"
 }""",0,syntax_error
 qwen2.5-coder:7b,cot,L4-027,L4_nested,passed,"unrecognized token: """"
@@ -3266,7 +3266,7 @@ qwen2.5-coder:7b,cot,L4-043,L4_nested,passed,,0,result_mismatch
 qwen2.5-coder:7b,cot,L4-044,L4_nested,passed,"unrecognized token: """"
 }""",0,syntax_error
 qwen2.5-coder:7b,cot,L4-045,L4_nested,passed,,0,result_mismatch
-qwen2.5-coder:7b,cot,L4-046,L4_nested,passed,,1,correct
+qwen2.5-coder:7b,cot,L4-046,L4_nested,passed,,0,result_mismatch
 qwen2.5-coder:7b,cot,L4-047,L4_nested,passed,"unrecognized token: """"
 }""",0,syntax_error
 qwen2.5-coder:7b,cot,L4-048,L4_nested,passed,"unrecognized token: """"
@@ -3448,8 +3448,8 @@ qwen2.5-coder:7b,cot_sl,L4-020,L4_nested,passed,,1,correct
 qwen2.5-coder:7b,cot_sl,L4-021,L4_nested,passed,,1,correct
 qwen2.5-coder:7b,cot_sl,L4-022,L4_nested,passed,,1,correct
 qwen2.5-coder:7b,cot_sl,L4-023,L4_nested,passed,no such column: location_id,0,schema_reference_error
-qwen2.5-coder:7b,cot_sl,L4-024,L4_nested,passed,,1,correct
-qwen2.5-coder:7b,cot_sl,L4-025,L4_nested,passed,,0,result_mismatch
+qwen2.5-coder:7b,cot_sl,L4-024,L4_nested,passed,,0,result_mismatch
+qwen2.5-coder:7b,cot_sl,L4-025,L4_nested,passed,,1,correct
 qwen2.5-coder:7b,cot_sl,L4-026,L4_nested,passed,,0,result_mismatch
 qwen2.5-coder:7b,cot_sl,L4-027,L4_nested,passed,,0,result_mismatch
 qwen2.5-coder:7b,cot_sl,L4-028,L4_nested,passed,,0,result_mismatch
@@ -3498,7 +3498,7 @@ qwen2.5-coder:7b,few,L1-020,L1_simple,passed,,1,correct
 qwen2.5-coder:7b,few,L1-021,L1_simple,passed,,0,result_mismatch
 qwen2.5-coder:7b,few,L1-022,L1_simple,passed,,0,result_mismatch
 qwen2.5-coder:7b,few,L1-023,L1_simple,passed,,0,result_mismatch
-qwen2.5-coder:7b,few,L1-024,L1_simple,passed,,1,correct
+qwen2.5-coder:7b,few,L1-024,L1_simple,passed,,0,result_mismatch
 qwen2.5-coder:7b,few,L1-025,L1_simple,passed,,1,correct
 qwen2.5-coder:7b,few,L1-026,L1_simple,passed,,1,correct
 qwen2.5-coder:7b,few,L1-027,L1_simple,passed,,1,correct
@@ -3649,7 +3649,7 @@ qwen2.5-coder:7b,few,L4-021,L4_nested,passed,,1,correct
 qwen2.5-coder:7b,few,L4-022,L4_nested,passed,,1,correct
 qwen2.5-coder:7b,few,L4-023,L4_nested,passed,no such column: b.location_id,0,schema_reference_error
 qwen2.5-coder:7b,few,L4-024,L4_nested,passed,,0,result_mismatch
-qwen2.5-coder:7b,few,L4-025,L4_nested,passed,,0,result_mismatch
+qwen2.5-coder:7b,few,L4-025,L4_nested,passed,,1,correct
 qwen2.5-coder:7b,few,L4-026,L4_nested,passed,,0,result_mismatch
 qwen2.5-coder:7b,few,L4-027,L4_nested,passed,,1,correct
 qwen2.5-coder:7b,few,L4-028,L4_nested,passed,,0,result_mismatch
@@ -3898,7 +3898,7 @@ qwen2.5-coder:7b,zero,L1-020,L1_simple,passed,,1,correct
 qwen2.5-coder:7b,zero,L1-021,L1_simple,passed,,0,result_mismatch
 qwen2.5-coder:7b,zero,L1-022,L1_simple,passed,,0,result_mismatch
 qwen2.5-coder:7b,zero,L1-023,L1_simple,passed,,0,result_mismatch
-qwen2.5-coder:7b,zero,L1-024,L1_simple,passed,,0,result_mismatch
+qwen2.5-coder:7b,zero,L1-024,L1_simple,passed,,1,correct
 qwen2.5-coder:7b,zero,L1-025,L1_simple,passed,,1,correct
 qwen2.5-coder:7b,zero,L1-026,L1_simple,passed,,1,correct
 qwen2.5-coder:7b,zero,L1-027,L1_simple,passed,,1,correct
@@ -4048,8 +4048,8 @@ qwen2.5-coder:7b,zero,L4-020,L4_nested,passed,,1,correct
 qwen2.5-coder:7b,zero,L4-021,L4_nested,passed,,1,correct
 qwen2.5-coder:7b,zero,L4-022,L4_nested,passed,,1,correct
 qwen2.5-coder:7b,zero,L4-023,L4_nested,passed,no such column: books.location_id,0,schema_reference_error
-qwen2.5-coder:7b,zero,L4-024,L4_nested,passed,,1,correct
-qwen2.5-coder:7b,zero,L4-025,L4_nested,passed,,0,result_mismatch
+qwen2.5-coder:7b,zero,L4-024,L4_nested,passed,,0,result_mismatch
+qwen2.5-coder:7b,zero,L4-025,L4_nested,passed,,1,correct
 qwen2.5-coder:7b,zero,L4-026,L4_nested,passed,,0,result_mismatch
 qwen2.5-coder:7b,zero,L4-027,L4_nested,passed,,1,correct
 qwen2.5-coder:7b,zero,L4-028,L4_nested,passed,,0,result_mismatch
@@ -4098,7 +4098,7 @@ qwen3.7-plus,cot,L1-020,L1_simple,passed,,1,correct
 qwen3.7-plus,cot,L1-021,L1_simple,passed,,0,result_mismatch
 qwen3.7-plus,cot,L1-022,L1_simple,passed,,1,correct
 qwen3.7-plus,cot,L1-023,L1_simple,passed,,1,correct
-qwen3.7-plus,cot,L1-024,L1_simple,passed,,0,result_mismatch
+qwen3.7-plus,cot,L1-024,L1_simple,passed,,1,correct
 qwen3.7-plus,cot,L1-025,L1_simple,passed,,1,correct
 qwen3.7-plus,cot,L1-026,L1_simple,passed,,1,correct
 qwen3.7-plus,cot,L1-027,L1_simple,passed,,1,correct
@@ -4248,8 +4248,8 @@ qwen3.7-plus,cot,L4-020,L4_nested,passed,,1,correct
 qwen3.7-plus,cot,L4-021,L4_nested,passed,,1,correct
 qwen3.7-plus,cot,L4-022,L4_nested,passed,,1,correct
 qwen3.7-plus,cot,L4-023,L4_nested,passed,,1,correct
-qwen3.7-plus,cot,L4-024,L4_nested,passed,,0,result_mismatch
-qwen3.7-plus,cot,L4-025,L4_nested,passed,,0,result_mismatch
+qwen3.7-plus,cot,L4-024,L4_nested,passed,,1,correct
+qwen3.7-plus,cot,L4-025,L4_nested,passed,,1,correct
 qwen3.7-plus,cot,L4-026,L4_nested,passed,,0,result_mismatch
 qwen3.7-plus,cot,L4-027,L4_nested,passed,,1,correct
 qwen3.7-plus,cot,L4-028,L4_nested,passed,,1,correct
@@ -4270,7 +4270,7 @@ qwen3.7-plus,cot,L4-042,L4_nested,passed,,0,result_mismatch
 qwen3.7-plus,cot,L4-043,L4_nested,passed,,0,result_mismatch
 qwen3.7-plus,cot,L4-044,L4_nested,passed,,0,result_mismatch
 qwen3.7-plus,cot,L4-045,L4_nested,passed,,0,result_mismatch
-qwen3.7-plus,cot,L4-046,L4_nested,passed,,0,result_mismatch
+qwen3.7-plus,cot,L4-046,L4_nested,passed,,1,correct
 qwen3.7-plus,cot,L4-047,L4_nested,passed,,0,result_mismatch
 qwen3.7-plus,cot,L4-048,L4_nested,passed,,1,correct
 qwen3.7-plus,cot,L4-049,L4_nested,passed,,0,result_mismatch
@@ -4298,7 +4298,7 @@ qwen3.7-plus,cot_sl,L1-020,L1_simple,passed,,1,correct
 qwen3.7-plus,cot_sl,L1-021,L1_simple,passed,,0,result_mismatch
 qwen3.7-plus,cot_sl,L1-022,L1_simple,passed,,1,correct
 qwen3.7-plus,cot_sl,L1-023,L1_simple,passed,,1,correct
-qwen3.7-plus,cot_sl,L1-024,L1_simple,passed,,0,result_mismatch
+qwen3.7-plus,cot_sl,L1-024,L1_simple,passed,,1,correct
 qwen3.7-plus,cot_sl,L1-025,L1_simple,passed,,1,correct
 qwen3.7-plus,cot_sl,L1-026,L1_simple,passed,,1,correct
 qwen3.7-plus,cot_sl,L1-027,L1_simple,passed,,1,correct
@@ -4448,8 +4448,8 @@ qwen3.7-plus,cot_sl,L4-020,L4_nested,passed,,1,correct
 qwen3.7-plus,cot_sl,L4-021,L4_nested,passed,,1,correct
 qwen3.7-plus,cot_sl,L4-022,L4_nested,passed,,1,correct
 qwen3.7-plus,cot_sl,L4-023,L4_nested,passed,,1,correct
-qwen3.7-plus,cot_sl,L4-024,L4_nested,passed,,0,result_mismatch
-qwen3.7-plus,cot_sl,L4-025,L4_nested,passed,,0,result_mismatch
+qwen3.7-plus,cot_sl,L4-024,L4_nested,passed,,1,correct
+qwen3.7-plus,cot_sl,L4-025,L4_nested,passed,,1,correct
 qwen3.7-plus,cot_sl,L4-026,L4_nested,passed,,0,result_mismatch
 qwen3.7-plus,cot_sl,L4-027,L4_nested,passed,,1,correct
 qwen3.7-plus,cot_sl,L4-028,L4_nested,passed,,0,result_mismatch
@@ -4470,7 +4470,7 @@ qwen3.7-plus,cot_sl,L4-042,L4_nested,passed,,0,result_mismatch
 qwen3.7-plus,cot_sl,L4-043,L4_nested,passed,,0,result_mismatch
 qwen3.7-plus,cot_sl,L4-044,L4_nested,passed,,0,result_mismatch
 qwen3.7-plus,cot_sl,L4-045,L4_nested,passed,,0,result_mismatch
-qwen3.7-plus,cot_sl,L4-046,L4_nested,passed,,0,result_mismatch
+qwen3.7-plus,cot_sl,L4-046,L4_nested,passed,,1,correct
 qwen3.7-plus,cot_sl,L4-047,L4_nested,passed,,0,result_mismatch
 qwen3.7-plus,cot_sl,L4-048,L4_nested,passed,,1,correct
 qwen3.7-plus,cot_sl,L4-049,L4_nested,passed,,0,result_mismatch
@@ -4498,7 +4498,7 @@ qwen3.7-plus,few,L1-020,L1_simple,passed,,1,correct
 qwen3.7-plus,few,L1-021,L1_simple,passed,,1,correct
 qwen3.7-plus,few,L1-022,L1_simple,passed,,1,correct
 qwen3.7-plus,few,L1-023,L1_simple,passed,,1,correct
-qwen3.7-plus,few,L1-024,L1_simple,passed,,0,result_mismatch
+qwen3.7-plus,few,L1-024,L1_simple,passed,,1,correct
 qwen3.7-plus,few,L1-025,L1_simple,passed,,1,correct
 qwen3.7-plus,few,L1-026,L1_simple,passed,,1,correct
 qwen3.7-plus,few,L1-027,L1_simple,passed,,1,correct
@@ -4648,8 +4648,8 @@ qwen3.7-plus,few,L4-020,L4_nested,passed,,1,correct
 qwen3.7-plus,few,L4-021,L4_nested,passed,,1,correct
 qwen3.7-plus,few,L4-022,L4_nested,passed,,1,correct
 qwen3.7-plus,few,L4-023,L4_nested,passed,,0,result_mismatch
-qwen3.7-plus,few,L4-024,L4_nested,passed,,1,correct
-qwen3.7-plus,few,L4-025,L4_nested,passed,,0,result_mismatch
+qwen3.7-plus,few,L4-024,L4_nested,passed,,0,result_mismatch
+qwen3.7-plus,few,L4-025,L4_nested,passed,,1,correct
 qwen3.7-plus,few,L4-026,L4_nested,passed,,0,result_mismatch
 qwen3.7-plus,few,L4-027,L4_nested,passed,,1,correct
 qwen3.7-plus,few,L4-028,L4_nested,passed,,1,correct
@@ -4670,7 +4670,7 @@ qwen3.7-plus,few,L4-042,L4_nested,passed,,0,result_mismatch
 qwen3.7-plus,few,L4-043,L4_nested,passed,,0,result_mismatch
 qwen3.7-plus,few,L4-044,L4_nested,passed,,0,result_mismatch
 qwen3.7-plus,few,L4-045,L4_nested,passed,,0,result_mismatch
-qwen3.7-plus,few,L4-046,L4_nested,passed,,0,result_mismatch
+qwen3.7-plus,few,L4-046,L4_nested,passed,,1,correct
 qwen3.7-plus,few,L4-047,L4_nested,passed,,0,result_mismatch
 qwen3.7-plus,few,L4-048,L4_nested,passed,,1,correct
 qwen3.7-plus,few,L4-049,L4_nested,passed,,0,result_mismatch
@@ -4698,7 +4698,7 @@ qwen3.7-plus,sl,L1-020,L1_simple,passed,,1,correct
 qwen3.7-plus,sl,L1-021,L1_simple,passed,,0,result_mismatch
 qwen3.7-plus,sl,L1-022,L1_simple,passed,,1,correct
 qwen3.7-plus,sl,L1-023,L1_simple,passed,,1,correct
-qwen3.7-plus,sl,L1-024,L1_simple,passed,,0,result_mismatch
+qwen3.7-plus,sl,L1-024,L1_simple,passed,,1,correct
 qwen3.7-plus,sl,L1-025,L1_simple,passed,,1,correct
 qwen3.7-plus,sl,L1-026,L1_simple,passed,,1,correct
 qwen3.7-plus,sl,L1-027,L1_simple,passed,,1,correct
@@ -4848,8 +4848,8 @@ qwen3.7-plus,sl,L4-020,L4_nested,passed,,1,correct
 qwen3.7-plus,sl,L4-021,L4_nested,passed,,1,correct
 qwen3.7-plus,sl,L4-022,L4_nested,passed,,1,correct
 qwen3.7-plus,sl,L4-023,L4_nested,passed,,1,correct
-qwen3.7-plus,sl,L4-024,L4_nested,passed,,0,result_mismatch
-qwen3.7-plus,sl,L4-025,L4_nested,passed,,0,result_mismatch
+qwen3.7-plus,sl,L4-024,L4_nested,passed,,1,correct
+qwen3.7-plus,sl,L4-025,L4_nested,passed,,1,correct
 qwen3.7-plus,sl,L4-026,L4_nested,passed,,0,result_mismatch
 qwen3.7-plus,sl,L4-027,L4_nested,passed,,1,correct
 qwen3.7-plus,sl,L4-028,L4_nested,passed,,0,result_mismatch
@@ -4870,7 +4870,7 @@ qwen3.7-plus,sl,L4-042,L4_nested,passed,,0,result_mismatch
 qwen3.7-plus,sl,L4-043,L4_nested,passed,,0,result_mismatch
 qwen3.7-plus,sl,L4-044,L4_nested,passed,,0,result_mismatch
 qwen3.7-plus,sl,L4-045,L4_nested,passed,,0,result_mismatch
-qwen3.7-plus,sl,L4-046,L4_nested,passed,,0,result_mismatch
+qwen3.7-plus,sl,L4-046,L4_nested,passed,,1,correct
 qwen3.7-plus,sl,L4-047,L4_nested,passed,,0,result_mismatch
 qwen3.7-plus,sl,L4-048,L4_nested,passed,,1,correct
 qwen3.7-plus,sl,L4-049,L4_nested,passed,,0,result_mismatch
@@ -4898,7 +4898,7 @@ qwen3.7-plus,zero,L1-020,L1_simple,passed,,1,correct
 qwen3.7-plus,zero,L1-021,L1_simple,passed,,0,result_mismatch
 qwen3.7-plus,zero,L1-022,L1_simple,passed,,1,correct
 qwen3.7-plus,zero,L1-023,L1_simple,passed,,1,correct
-qwen3.7-plus,zero,L1-024,L1_simple,passed,,0,result_mismatch
+qwen3.7-plus,zero,L1-024,L1_simple,passed,,1,correct
 qwen3.7-plus,zero,L1-025,L1_simple,passed,,1,correct
 qwen3.7-plus,zero,L1-026,L1_simple,passed,,1,correct
 qwen3.7-plus,zero,L1-027,L1_simple,passed,,1,correct
@@ -5048,8 +5048,8 @@ qwen3.7-plus,zero,L4-020,L4_nested,passed,,1,correct
 qwen3.7-plus,zero,L4-021,L4_nested,passed,,1,correct
 qwen3.7-plus,zero,L4-022,L4_nested,passed,,1,correct
 qwen3.7-plus,zero,L4-023,L4_nested,passed,,1,correct
-qwen3.7-plus,zero,L4-024,L4_nested,passed,,0,result_mismatch
-qwen3.7-plus,zero,L4-025,L4_nested,passed,,0,result_mismatch
+qwen3.7-plus,zero,L4-024,L4_nested,passed,,1,correct
+qwen3.7-plus,zero,L4-025,L4_nested,passed,,1,correct
 qwen3.7-plus,zero,L4-026,L4_nested,passed,,0,result_mismatch
 qwen3.7-plus,zero,L4-027,L4_nested,passed,,1,correct
 qwen3.7-plus,zero,L4-028,L4_nested,passed,,1,correct
@@ -5070,7 +5070,7 @@ qwen3.7-plus,zero,L4-042,L4_nested,passed,,0,result_mismatch
 qwen3.7-plus,zero,L4-043,L4_nested,passed,,0,result_mismatch
 qwen3.7-plus,zero,L4-044,L4_nested,passed,,0,result_mismatch
 qwen3.7-plus,zero,L4-045,L4_nested,passed,,0,result_mismatch
-qwen3.7-plus,zero,L4-046,L4_nested,passed,,0,result_mismatch
+qwen3.7-plus,zero,L4-046,L4_nested,passed,,1,correct
 qwen3.7-plus,zero,L4-047,L4_nested,passed,,0,result_mismatch
 qwen3.7-plus,zero,L4-048,L4_nested,passed,,1,correct
 qwen3.7-plus,zero,L4-049,L4_nested,passed,,0,result_mismatch

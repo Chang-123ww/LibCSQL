@@ -5,7 +5,7 @@ sensitivity_cleaning.py — 复现论文 Table 4.1（输出清理规则的敏感
 论文 §3.3.7 定义的清理规则不是预先设定的，而是初评发现 JSON 残渣后才写的。
 因此 §4.2.1 给出清理前后的完整对照，使该规则对每一个被引用量的影响都可检查。
 本脚本从 results/revalidated.csv 直接重算这张表：
-    ex_orig = 清理前的判定，ex = 清理后的判定（清理规则对全部 5,000 条一律适用）。
+    ex_raw = 清理前的判定，ex = 清理后的判定（两者都对照复核后的 gold；清理规则对全部 5,000 条一律适用）。
 
 用法：
   python -m src.db_setup --db data/library.db     # 若尚未生成测试库
@@ -45,17 +45,18 @@ def main():
     if not os.path.exists(SRC):
         sys.exit(f"找不到 {SRC}，请先运行 python reevaluate.py")
     df = pd.read_csv(SRC)
-    pb, mob, meb = marginals(df, "ex_orig")   # before cleaning
+    BEFORE = "ex_raw" if "ex_raw" in df.columns else "ex_orig"
+    pb, mob, meb = marginals(df, BEFORE)   # before cleaning
     pa, moa, mea = marginals(df, "ex")        # after cleaning
 
-    up = int(((df.ex_orig == 0) & (df.ex == 1)).sum())
-    down = int(((df.ex_orig == 1) & (df.ex == 0)).sum())
+    up = int(((df[BEFORE] == 0) & (df.ex == 1)).sum())
+    down = int(((df[BEFORE] == 1) & (df.ex == 0)).sum())
     changed = [(m, me) for m in pa.index for me in METHODS
                if abs(pa.loc[m, me] - pb.loc[m, me]) > 1e-12]
 
     rows = [("Overall execution accuracy (5,000 records)",
-             f"{df.ex_orig.mean():.3f}", f"{df.ex.mean():.3f}",
-             f"{df.ex.mean()-df.ex_orig.mean():+.3f}")]
+             f"{df[BEFORE].mean():.3f}", f"{df.ex.mean():.3f}",
+             f"{df.ex.mean()-df[BEFORE].mean():+.3f}")]
     for m, me in changed:
         rows.append((f"{SHORT.get(m, m)} x {LABEL[me]}",
                      f"{pb.loc[m, me]:.3f}", f"{pa.loc[m, me]:.3f}",

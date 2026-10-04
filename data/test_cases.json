@@ -141,7 +141,7 @@
   "id": "L1-024",
   "difficulty": "L1_simple",
   "question_zh": "有哪些书一次都没被借出去、复本全都在架上的？列个书名",
-  "sql_gold": "SELECT title FROM books WHERE available_copies = total_copies"
+  "sql_gold": "SELECT title FROM books WHERE available_copies = total_copies AND book_id NOT IN (SELECT DISTINCT book_id FROM borrow_records)"
  },
  {
   "id": "L1-025",
@@ -1041,13 +1041,13 @@
   "id": "L4-024",
   "difficulty": "L4_nested",
   "question_zh": "查询续借过至少2次不同图书的读者姓名",
-  "sql_gold": "SELECT r.name FROM readers r JOIN borrow_records br ON r.reader_id = br.reader_id WHERE br.renew_count >= 2 GROUP BY r.reader_id, r.name HAVING COUNT(DISTINCT br.book_id) >= 2"
+  "sql_gold": "SELECT r.name FROM readers r JOIN borrow_records br ON r.reader_id = br.reader_id WHERE br.renew_count >= 1 GROUP BY r.reader_id, r.name HAVING COUNT(DISTINCT br.book_id) >= 2"
  },
  {
   "id": "L4-025",
   "difficulty": "L4_nested",
   "question_zh": "找出所有在馆可借但从来没被借过的图书书名和所在馆藏地",
-  "sql_gold": "SELECT b.title, l.location_name FROM books b JOIN categories c ON b.category_id = c.category_id JOIN locations l ON c.location_id = l.location_id WHERE b.available_copies = b.total_copies AND b.book_id NOT IN (SELECT DISTINCT book_id FROM borrow_records)"
+  "sql_gold": "SELECT b.title, l.location_name FROM books b JOIN categories c ON b.category_id = c.category_id JOIN locations l ON c.location_id = l.location_id WHERE b.available_copies > 0 AND b.book_id NOT IN (SELECT DISTINCT book_id FROM borrow_records)"
  },
  {
   "id": "L4-026",
@@ -1173,7 +1173,7 @@
   "id": "L4-046",
   "difficulty": "L4_nested",
   "question_zh": "计算所有读者的平均未归还图书数量",
-  "sql_gold": "WITH reader_unreturned AS (SELECT reader_id, COUNT(*) AS cnt FROM borrow_records WHERE return_date IS NULL GROUP BY reader_id) SELECT AVG(cnt) AS avg_unreturned FROM reader_unreturned"
+  "sql_gold": "WITH ru AS (SELECT r.reader_id, COUNT(br.record_id) AS cnt FROM readers r LEFT JOIN borrow_records br ON r.reader_id = br.reader_id AND br.return_date IS NULL GROUP BY r.reader_id) SELECT AVG(cnt) AS avg_unreturned FROM ru"
  },
  {
   "id": "L4-047",

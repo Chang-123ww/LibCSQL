@@ -1,0 +1,14 @@
+﻿Quantity,Before cleaning,After cleaning,Change
+"Overall execution accuracy (5,000 records)",0.699,0.706,+0.006
+doubao-2.0-mini x SL,0.730,0.735,+0.005
+qwen2.5-coder:7b x CoT,0.385,0.540,+0.155
+The other 23 model x method cells,unchanged,unchanged,0.000
+"Model mean, doubao-2.0-mini",0.734,0.735,+0.001
+"Model mean, qwen2.5-coder:7b",0.575,0.606,+0.031
+"Method mean, CoT",0.660,0.691,+0.031
+"Method mean, SL",0.707,0.708,+0.001
+Range across the five models,0.246,0.215,-0.031
+Range across the five prompting methods,0.077,0.063,-0.014
+Ordering of the five models,qwen3.7-plus > doubao-2.0-mini > ernie-4.5-turbo > glm-4.7-flashX > qwen2.5-coder:7b,identical,none
+Ordering of the five methods,Few > Zero > SL > CoT+SL > CoT,Few > Zero > SL > CoT > CoT+SL,last two positions exchanged
+Records moving 0 -> 1 / 1 -> 0,-,32 / 0,-
